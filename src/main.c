@@ -1,473 +1,732 @@
-// arcademem - Port automatico J2ME -> PSP
-// Gerado por portador.py
-// MIDlet: MemoryMIDlet  Canvas: MemoryCanvas
-
+// ninjakid - main.c gerado por V12
 #include <pspkernel.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include "j2me_gfx.h"
 #include "j2me_font.h"
 #include "j2me_input.h"
 #include "j2me_image.h"
 #include "j2me_clip.h"
 #include "j2me_runtime.h"
-#include <stdint.h>
 
-// ============================================
-// TIPOS J2ME -> ponteiros opacos em C
-// ============================================
-typedef void* Image;
-typedef void* Graphics;
-typedef void* Font;
-typedef void* String;
-typedef void* Command;
-typedef void* Display;
-typedef void* Displayable;
-typedef void* MIDlet;
-typedef void* Canvas;
-
-PSP_MODULE_INFO("arcademem", 0, 1, 0);
+PSP_MODULE_INFO("ninjakid", 0, 1, 0);
 PSP_MAIN_THREAD_ATTR(THREAD_ATTR_USER);
 
 #define SCR_W 480
 #define SCR_H 272
 
-// ============================================
-// FORWARD DECLARATIONS das classes do projeto
-// ============================================
-typedef struct MemoryCanvas_s MemoryCanvas;
-typedef struct MemoryMIDlet_s MemoryMIDlet;
+// Tipos J2ME (todos como void*)
+typedef void* Image;
+typedef void* Graphics;
+typedef void* DirectGraphics;
+typedef void* Font;
+typedef void* String;
+typedef void* StringBuffer;
+typedef void* Command;
+typedef void* Display;
+typedef void* Displayable;
+typedef void* Canvas;
+typedef void* FullCanvas;
+typedef void* GameCanvas;
+typedef void* Random;
+typedef void* Timer;
+typedef void* TimerTask;
+typedef void* Vector;
+typedef void* List;
+typedef void* Form;
+typedef void* TextField;
+typedef void* InputStream;
+typedef void* DataInputStream;
+typedef void* OutputStream;
+typedef void* RecordStore;
+typedef void* Thread;
+typedef void* MIDlet;
+typedef void* Object;
+typedef void* Class;
+typedef void* Math;
+typedef void* System;
+typedef void* Integer;
+typedef void* Long;
+typedef void* Short;
+typedef void* Byte;
+typedef void* Character;
+typedef void* Boolean;
+typedef void* Float;
+typedef void* Double;
+typedef void* Sound;
+typedef void* DeviceControl;
+typedef void* SpriteEvent;
+typedef void* SpriteListener;
+typedef void* SpriteAction;
+typedef void* MIDP;
+typedef void* SoundListener;
+typedef void* Player;
+typedef void* PlayerListener;
+typedef void* Control;
+typedef void* Manager;
+typedef void* DataInputStream2;
+typedef void* ByteArrayInputStream;
+typedef void* ByteArrayOutputStream;
 
-// ============================================
-// ESTRUTURAS DE DADOS (traduzidas do J2ME)
-// ============================================
+// Stubs de biblioteca
+void j2me_canvas_repaint(void) { }
+void j2me_canvas_serviceRepaints(void) { }
+void j2me_gc(void) { }
+void* j2me_image_get_graphics(void* img) { return img; }
 
-// === Classe: MemoryCanvas (extends Canvas) ===
-// Padroes detectados: CANVAS, TEM_PAINT, TEM_INPUT, TEM_RUN, USA_TIMER, USA_IMAGE
-struct MemoryCanvas_s {
-    Display*        display;  // display (Ljavax/microedition/lcdui/Display;)
-    Display*        BackBuff;  // BackBuff (Ljavax/microedition/lcdui/Display;)
-    int             h;  // h (I)
-    int             w;  // w (I)
-    Image**         Card;  // Card ([Ljavax/microedition/lcdui/Image;)
-    int*            XPos;  // XPos ([I)
-    int*            YPos;  // YPos ([I)
-    int*            CardId;  // CardId ([I)
-    int*            CardVis;  // CardVis ([Z)
-    int*            CardCleard;  // CardCleard ([Z)
-    int64_t         time1;  // time1 (J)
-    int64_t         time2;  // time2 (J)
-    int64_t         wait1;  // wait1 (J)
-    int64_t         wait2;  // wait2 (J)
-    int64_t         Level;  // Level (J)
-    int64_t         RestTime;  // RestTime (J)
-    int             ShowGetTimeBonus;  // ShowGetTimeBonus (Z)
-    int             ShowPerfect;  // ShowPerfect (Z)
-    int             ShowHighScore;  // ShowHighScore (Z)
-    int             StartGame;  // StartGame (Z)
-    int             EndGame;  // EndGame (Z)
-    int             Begin;  // Begin (Z)
-    int             ShowTitel;  // ShowTitel (Z)
-    int             NoPaintBorad;  // NoPaintBorad (Z)
-    int             RoundClear;  // RoundClear (Z)
-    int             Perfect;  // Perfect (Z)
-    int             BreakWhile;  // BreakWhile (Z)
-    int             GetTimeBonusActive;  // GetTimeBonusActive (Z)
-    int             CanBreak;  // CanBreak (Z)
-    int             NoCheckTwice;  // NoCheckTwice (Z)
-    int             score;  // score (I)
-    Font*           font;  // font (Ljavax/microedition/lcdui/Font;)
-    Timer*          timer;  // timer (Ljava/util/Timer;)
-    Thread*         thread;  // thread (Ljava/lang/Thread;)
-    String**        names;  // names ([Ljava/lang/String;)
-    int*            values;  // values ([I)
-    int             TitX1;  // TitX1 (I)
-    int             TitX2;  // TitX2 (I)
-    int             TitX3;  // TitX3 (I)
-    int             TitX4;  // TitX4 (I)
-    int             TitX5;  // TitX5 (I)
-    int             TitY1;  // TitY1 (I)
-    int             TitY2;  // TitY2 (I)
-    int             TitY3;  // TitY3 (I)
-    int             TitY4;  // TitY4 (I)
-    int             TitY5;  // TitY5 (I)
-    Image*          _buffer;  // _buffer (Ljavax/microedition/lcdui/Image;)
+// Forward typedefs das classes do projeto
+typedef struct gamecanvas_AnimationTask_s gamecanvas_AnimationTask;
+typedef struct gamecanvas_AnimationTask_s gamecanvas_AnimationTask_s;
+typedef struct gamecanvas_s gamecanvas;
+typedef struct gamecanvas_s gamecanvas_s;
+typedef struct main_class_s main_class;
+typedef struct main_class_s main_class_s;
+
+// Globais
+void* _self = 0;
+void* _p1_self = 0;
+void* _p2_self = 0;
+void* _role_self = 0;
+gamecanvas* msf_mc = 0;
+int Game_count = 0;
+int MapCanvas_OFFY = 96;
+int MapCanvas_OFFX = 180;
+int MapCanvas_CanvasWidth = 480;
+int MapCanvas_CanvasHeight = 272;
+int MapCanvas_still = 0;
+int MapCanvas_lightflag = 0;
+
+// Structs
+struct gamecanvas_AnimationTask_s {
+    gamecanvas*  this_0;
 };
 
-// === Classe: MemoryMIDlet (extends MIDlet) ===
-// Padroes detectados: MIDLET, TEM_STARTAPP
-struct MemoryMIDlet_s {
-    Form*           scoreForm;  // scoreForm (Ljavax/microedition/lcdui/Form;)
-    TextField*      _scoreField;  // _scoreField (Ljavax/microedition/lcdui/TextField;)
-    Command*        _doneCommand;  // _doneCommand (Ljavax/microedition/lcdui/Command;)
-    Displayable*    _currentDisplayable;  // _currentDisplayable (Ljavax/microedition/lcdui/Displayable;)
-    int             HiScoreOk;  // HiScoreOk (Z)
-    MemoryCanvas*   canvas;  // canvas (LMemoryGame/MemoryCanvas;)
-    Display*        display;  // display (Ljavax/microedition/lcdui/Display;)
-    Command*        _exitCommand;  // _exitCommand (Ljavax/microedition/lcdui/Command;)
+struct gamecanvas_s {
+    Image*       offimage;
+    Graphics*    offscreenbuffer;
+    DirectGraphics* DGoffscreenbuffer;
+    Image*       tileimage;
+    Graphics*    tileimagebuffer;
+    DirectGraphics* DGtileimagebuffer;
+    Image**      bobgfx;
+    int          keypressed;
+    int          game_keypressed;
+    int          screenX;
+    int          screenY;
+    main*        midlet;
+    String**     tunes;
+    int          red;
+    int          green;
+    int          blue;
+    int          i;
+    int          mode;
+    int          textmode;
+    int          waiter;
+    RecordStore* HighScore;
+    Timer*       animTimer;
+    int          animperiod;
+    String*      playerName;
+    int          score;
+    String*      soundopt;
+    String*      musicopt;
+    String*      levelopt;
+    int          difficulty;
+    int          optioncur;
+    int          hy;
+    String**     highscoreplayers;
+    int*         highscorepoints;
+    int          arrow_x;
+    unsigned short* playerNamechars;
+    int          lives;
+    Random*      random;
+    int**        sprites;
+    int          anzahlsprites;
+    int          spritecount;
+    Image**      icons;
+    Image*       loadicon;
+    int          anzahl_icons;
+    Image*       loadfont;
+    int          fontwidth;
+    int          fontheight;
+    int          playerXpos;
+    int          playerYpos;
+    int          player;
+    int          playerdir;
+    int          lastmm;
+    int          playeranimdelay;
+    int          logo;
+    int          iecom;
+    int          titel;
+    int          door1;
+    int          door2;
+    int          explo;
+    int          extra;
+    signed char* leveldata;
+    signed char* leveldata2;
+    signed char* maskdata;
+    int          levelbreite;
+    int          levelhoehe;
+    int          levelxpos;
+    int          levelypos;
+    int          lastlevelxpos;
+    int          lastlevelypos;
+    int**        levelinfo;
+    int          level;
+    signed char  MASK_PLAYER_RELEASE;
+    signed char  MASK_WALKWAY;
+    signed char  MASK_WALL;
+    signed char  MASK_LADDER;
+    signed char  MASK_PLAYERRELEASE;
+    signed char  MASK_VASE_START;
+    signed char  MASK_VASE_END;
+    signed char  MASK_FIRERELEASE;
+    signed char  MASK_FIREDIRCHANGE;
+    signed char  MASK_PLASMARELEASE;
+    signed char  MASK_GATE;
+    signed char  MASK_DEAD;
+    int          skycolor;
+    int          faderdir;
+    int          faderypos;
+    int          fading;
+    int64_t      startTime;
+    int64_t      endTime;
+    int          gateblocks;
+    int          titelscrolldir;
+    int          titelwaiter;
+    int          scrollX;
+    int          scrollY;
+    int          softxpos;
+    int          softypos;
+    int          jumpspeed;
+    int          playerjumps;
+    int          lastlevelnr;
+    int          lastenemynr;
+    int          keyuppressed;
+    int          playerfalling;
+    int          XposOffset;
+    int          aufleiter;
+    int          explowaiter;
+    int          extrajumps;
+    int          extrajumpspeed;
+    int          extraypos;
+    signed char  keys;
+    int          diamant;
+    int          playerhit;
+    int          playerhitdir;
+    int          playerpower;
+    int          playerflashing;
+    int          playerlostlive;
+    int          hitrotate;
+    int          hitrotatedelay;
+    int          lastplayerxpos;
+    int          lastplayerypos;
+    int          lastscrollx;
+    int          lastscrolly;
+    int          exploonly;
+    int          firereleased;
+    int          playerONlift;
+    int          extralife;
+    int          swordpower;
+    int          energyfound;
+    int          levelok;
+    Sound*       sound;
+    int          pause;
 };
 
-// ============================================
-// METODOS (traduzidos do bytecode)
-// ============================================
+struct main_s {
+    Display*     display;
+    gamecanvas*  screen;
+    int          started;
+};
 
-// === MemoryCanvas.MemoryCanvas_constructor ((Ljavax/microedition/lcdui/Display;)V) ===
-// Instrucoes: 72
-// APIs usadas:
-//   1x javax/microedition/lcdui/Canvas.<init> -> ??? javax/microedition/lcdui/Canvas.<init>
-//   1x java/util/Timer.<init> -> ??? java/util/Timer.<init>
-//   1x java/lang/Thread.<init> -> ??? java/lang/Thread.<init>
-//   1x java/lang/Thread.start -> j2me_thread_start
-void MemoryCanvas_constructor() {
-    // TODO: traduzir logica do bytecode
+// Prototipos
+void gamecanvas_AnimationTask_constructor(void* self, void* arg0, void* arg1);
+void gamecanvas_AnimationTask_run(void* self);
+void gamecanvas_constructor(void* self, void* arg0);
+void gamecanvas_keyPressed(void* self, int arg0);
+void gamecanvas_keyReleased(void* self, int arg0);
+void gamecanvas_DoAll(void* self);
+void gamecanvas_paint(void* self, void* arg0);
+void gamecanvas_InitGFX(void* self);
+void gamecanvas_LoadGFX(void* self);
+void gamecanvas_InitScores(void* self);
+void gamecanvas_InsertScore(void* self);
+void gamecanvas_GetHighScore(void* self);
+void gamecanvas_AddHighScore(void* self);
+void gamecanvas_InitSpriteMaster(void* self);
+int gamecanvas_bornSprite(void* self, int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8);
+void gamecanvas_MoveEnemies(void* self);
+void gamecanvas_drawSprites(void* self, void* arg0);
+void gamecanvas_hideSprite(void* self, int arg0);
+void gamecanvas_showSprite(void* self, int arg0);
+void gamecanvas_killSprite(void* self, int arg0);
+void gamecanvas_setSpritePos(void* self, int arg0, int arg1, int arg2);
+void gamecanvas_setSpriteManipulation(void* self, int arg0, int arg1);
+int gamecanvas_getSpriteManipulation(void* self, int arg0);
+int gamecanvas_getSpriteXpos(void* self, int arg0);
+int gamecanvas_getSpriteYpos(void* self, int arg0);
+void gamecanvas_setSpriteAnim(void* self, int arg0, int arg1);
+int gamecanvas_getSpriteAnim(void* self, int arg0);
+int gamecanvas_getSpriteHeight(void* self, int arg0);
+int gamecanvas_getSpriteWidth(void* self, int arg0);
+int gamecanvas_getGFXHeight(void* self, int arg0);
+int gamecanvas_getGFXWidth(void* self, int arg0);
+int gamecanvas_getHide(void* self, int arg0);
+void gamecanvas_LoadIcons(void* self, void* arg0);
+void gamecanvas_DrawText(void* self, void* arg0, void* arg1, int arg2, int arg3, int arg4);
+void gamecanvas_LoadFont(void* self, void* arg0);
+void gamecanvas_LoadLevel(void* self, void* arg0);
+void gamecanvas_DrawIcons(void* self, int arg0);
+void gamecanvas_MakeSprites(void* self);
+void gamecanvas_DrawIt(void* self, int arg0, int arg1, int arg2, int arg3);
+void gamecanvas_Scroll(void* self, int arg0, int arg1);
+int gamecanvas_GetIcon(void* self, int arg0, int arg1);
+void gamecanvas_SetIcon(void* self, int arg0, int arg1, int arg2, int arg3, int arg4);
+int gamecanvas_checkkollision(void* self, int arg0, int arg1, int arg2, int arg3);
+void gamecanvas_GetLevelInfo(void* self, int arg0);
+void gamecanvas_MovePlayer(void* self, int arg0);
+void gamecanvas_checkHit(void* self);
+void gamecanvas_JumpPlayer(void* self);
+void gamecanvas_FallPlayer(void* self);
+void gamecanvas_ExtraJump(void* self);
+void gamecanvas_openGate(void* self, int arg0, int arg1);
+void gamecanvas_titelscroll(void* self);
+void gamecanvas_PlaySound(void* self, int arg0);
+void gamecanvas_StopSound(void* self);
+void* gamecanvas_convertHexToBinary(void* self, void* arg0);
+void gamecanvas_ReborneEnemy(void* self, int arg0);
+void gamecanvas_PlayerDead(void* self);
+void gamecanvas_resetdata(void* self);
+void gamecanvas_GetExtra(void* self);
+void main_constructor(void* self);
+void main_startApp(void* self);
+void main_pauseApp(void* self);
+void main_destroyApp(void* self, int arg0);
+void main_hideNotify(void* self);
+void main_showNotify(void* self);
+void main_exitRequested(void* self);
+
+// Implementacoes
+void gamecanvas_AnimationTask_constructor(void* self, void* arg0, void* arg1) {
+    gamecanvas_AnimationTask* s = (gamecanvas_AnimationTask*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_keyPressed ((I)V) ===
-// Instrucoes: 427
-// APIs usadas:
-//   2x javax/microedition/lcdui/Canvas.repaint -> j2me_canvas_repaint
-//   1x java/lang/Thread.yield -> ??? java/lang/Thread.yield
-void MemoryCanvas_keyPressed() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_AnimationTask_run(void* self) {
+    gamecanvas_AnimationTask* s = (gamecanvas_AnimationTask*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_keyRepeated ((I)V) ===
-// Instrucoes: 1
-void MemoryCanvas_keyRepeated() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_constructor(void* self, void* arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_keyReleased ((I)V) ===
-// Instrucoes: 1
-void MemoryCanvas_keyReleased() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_keyPressed(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_pointerPressed ((II)V) ===
-// Instrucoes: 1
-void MemoryCanvas_pointerPressed() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_keyReleased(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_pointerReleased ((II)V) ===
-// Instrucoes: 1
-void MemoryCanvas_pointerReleased() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_DoAll(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_pointerDragged ((II)V) ===
-// Instrucoes: 1
-void MemoryCanvas_pointerDragged() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_paint(void* self, void* arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_run (()V) ===
-// Instrucoes: 370
-// APIs usadas:
-//   10x javax/microedition/lcdui/Canvas.repaint -> j2me_canvas_repaint
-//   10x java/lang/Thread.yield -> ??? java/lang/Thread.yield
-//   5x java/lang/Thread.sleep -> j2me_sleep
-//   3x java/lang/System.currentTimeMillis -> j2me_time_ms
-//   1x javax/microedition/lcdui/TextField.getString -> ??? javax/microedition/lcdui/TextField.getString
-void MemoryCanvas_run() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_InitGFX(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_wait ((I)V) ===
-// Instrucoes: 36
-// APIs usadas:
-//   3x java/lang/System.currentTimeMillis -> j2me_time_ms
-//   1x javax/microedition/lcdui/Canvas.repaint -> j2me_canvas_repaint
-//   1x java/lang/Thread.yield -> ??? java/lang/Thread.yield
-void MemoryCanvas_wait() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_LoadGFX(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_ResetAllCards (()V) ===
-// Instrucoes: 18
-void MemoryCanvas_ResetAllCards() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_InitScores(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_CheckEndRound (()Z) ===
-// Instrucoes: 18
-int MemoryCanvas_CheckEndRound() {
-    // TODO: traduzir logica do bytecode
-    return 0;  // TODO
+void gamecanvas_InsertScore(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_CheckForGoed (()V) ===
-// Instrucoes: 66
-void MemoryCanvas_CheckForGoed() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_GetHighScore(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_CardsVisible (()I) ===
-// Instrucoes: 18
-int MemoryCanvas_CardsVisible() {
-    // TODO: traduzir logica do bytecode
-    return 0;  // TODO
+void gamecanvas_AddHighScore(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_paint ((Ljavax/microedition/lcdui/Graphics;)V) ===
-// Instrucoes: 137
-// APIs usadas:
-//   6x java/lang/StringBuffer.append -> ??? java/lang/StringBuffer.append
-//   3x java/lang/StringBuffer.<init> -> ??? java/lang/StringBuffer.<init>
-//   3x java/lang/StringBuffer.toString -> ??? java/lang/StringBuffer.toString
-//   3x javax/microedition/lcdui/Graphics.drawString -> j2me_font_draw
-//   2x javax/microedition/lcdui/Graphics.setColor -> j2me_gfx_set_color
-//   1x javax/microedition/lcdui/Image.getGraphics -> j2me_image_get_graphics
-//   1x javax/microedition/lcdui/Graphics.fillRect -> j2me_gfx_fill_rect
-//   1x javax/microedition/lcdui/Font.getFont -> ??? javax/microedition/lcdui/Font.getFont
-void MemoryCanvas_paint() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_InitSpriteMaster(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_GetTimeBonus ((Ljavax/microedition/lcdui/Graphics;J)V) ===
-// Instrucoes: 49
-// APIs usadas:
-//   5x java/lang/StringBuffer.append -> ??? java/lang/StringBuffer.append
-//   3x javax/microedition/lcdui/Graphics.drawString -> j2me_font_draw
-//   2x javax/microedition/lcdui/Graphics.setColor -> j2me_gfx_set_color
-//   2x java/lang/StringBuffer.<init> -> ??? java/lang/StringBuffer.<init>
-//   2x java/lang/StringBuffer.toString -> ??? java/lang/StringBuffer.toString
-//   1x javax/microedition/lcdui/Graphics.fillRect -> j2me_gfx_fill_rect
-void MemoryCanvas_GetTimeBonus() {
-    // TODO: traduzir logica do bytecode
+int gamecanvas_bornSprite(void* self, int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
 }
 
-// === MemoryCanvas.MemoryCanvas_GetPerfect ((Ljavax/microedition/lcdui/Graphics;)V) ===
-// Instrucoes: 25
-// APIs usadas:
-//   2x javax/microedition/lcdui/Graphics.setColor -> j2me_gfx_set_color
-//   2x javax/microedition/lcdui/Graphics.drawString -> j2me_font_draw
-//   1x javax/microedition/lcdui/Graphics.fillRect -> j2me_gfx_fill_rect
-void MemoryCanvas_GetPerfect() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_MoveEnemies(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_ShowCards ((I)V) ===
-// Instrucoes: 23
-// APIs usadas:
-//   1x javax/microedition/lcdui/Canvas.repaint -> j2me_canvas_repaint
-void MemoryCanvas_ShowCards() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_drawSprites(void* self, void* arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_ShowBackCards (()V) ===
-// Instrucoes: 21
-// APIs usadas:
-//   1x javax/microedition/lcdui/Canvas.repaint -> j2me_canvas_repaint
-//   1x java/lang/Thread.sleep -> j2me_sleep
-void MemoryCanvas_ShowBackCards() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_hideSprite(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_ShowTimerLine ((Ljavax/microedition/lcdui/Graphics;)V) ===
-// Instrucoes: 1
-void MemoryCanvas_ShowTimerLine() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_showSprite(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_SetCardPos (()V) ===
-// Instrucoes: 58
-// APIs usadas:
-//   1x javax/microedition/lcdui/Image.getHeight -> ??? javax/microedition/lcdui/Image.getHeight
-//   1x javax/microedition/lcdui/Image.getWidth -> ??? javax/microedition/lcdui/Image.getWidth
-void MemoryCanvas_SetCardPos() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_killSprite(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_PaintCards ((Ljavax/microedition/lcdui/Graphics;)V) ===
-// Instrucoes: 53
-void MemoryCanvas_PaintCards() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_setSpritePos(void* self, int arg0, int arg1, int arg2) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_DrawCard ((Ljavax/microedition/lcdui/Graphics;Ljavax/microedition/lcdui/Image;II)V) ===
-// Instrucoes: 9
-// APIs usadas:
-//   1x javax/microedition/lcdui/Graphics.drawImage -> j2me_image_blit
-void MemoryCanvas_DrawCard() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_setSpriteManipulation(void* self, int arg0, int arg1) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_DrawLevelBackGround ((Ljavax/microedition/lcdui/Graphics;)V) ===
-// Instrucoes: 68
-// APIs usadas:
-//   5x javax/microedition/lcdui/Graphics.drawLine -> ??? javax/microedition/lcdui/Graphics.drawLine
-void MemoryCanvas_DrawLevelBackGround() {
-    // TODO: traduzir logica do bytecode
+int gamecanvas_getSpriteManipulation(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
 }
 
-// === MemoryCanvas.MemoryCanvas_InitGraphics (()V) ===
-// Instrucoes: 102
-// APIs usadas:
-//   8x javax/microedition/lcdui/Image.createImage -> j2me_image_create
-//   1x java/io/PrintStream.print -> ??? java/io/PrintStream.print
-void MemoryCanvas_InitGraphics() {
-    // TODO: traduzir logica do bytecode
+int gamecanvas_getSpriteXpos(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
 }
 
-// === MemoryCanvas.MemoryCanvas_GetRandom ((I)I) ===
-// Instrucoes: 19
-// APIs usadas:
-//   1x java/util/Random.<init> -> j2me_random_init
-//   1x java/util/Random.nextInt -> j2me_random_next
-int MemoryCanvas_GetRandom() {
-    // TODO: traduzir logica do bytecode
-    return 0;  // TODO
+int gamecanvas_getSpriteYpos(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
 }
 
-// === MemoryCanvas.MemoryCanvas_MixCards (()V) ===
-// Instrucoes: 77
-void MemoryCanvas_MixCards() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_setSpriteAnim(void* self, int arg0, int arg1) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryCanvas.MemoryCanvas_isHighScore ((I)Z) ===
-// Instrucoes: 19
-int MemoryCanvas_isHighScore() {
-    // TODO: traduzir logica do bytecode
-    return 0;  // TODO
+int gamecanvas_getSpriteAnim(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
 }
 
-// === MemoryCanvas.MemoryCanvas_DisplayHighScore ((Ljavax/microedition/lcdui/Graphics;)V) ===
-// Instrucoes: 50
-// APIs usadas:
-//   3x javax/microedition/lcdui/Graphics.drawString -> j2me_font_draw
-//   2x java/lang/StringBuffer.append -> ??? java/lang/StringBuffer.append
-//   1x java/lang/StringBuffer.<init> -> ??? java/lang/StringBuffer.<init>
-//   1x java/lang/StringBuffer.toString -> ??? java/lang/StringBuffer.toString
-void MemoryCanvas_DisplayHighScore() {
-    // TODO: traduzir logica do bytecode
+int gamecanvas_getSpriteHeight(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
 }
 
-// === MemoryCanvas.MemoryCanvas_DisplayTitle ((Ljavax/microedition/lcdui/Graphics;)V) ===
-// Instrucoes: 113
-// APIs usadas:
-//   4x javax/microedition/lcdui/Graphics.drawString -> j2me_font_draw
-//   2x javax/microedition/lcdui/Font.getFont -> ??? javax/microedition/lcdui/Font.getFont
-//   2x javax/microedition/lcdui/Graphics.setFont -> j2me_noop
-void MemoryCanvas_DisplayTitle() {
-    // TODO: traduzir logica do bytecode
+int gamecanvas_getSpriteWidth(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
 }
 
-// === MemoryCanvas.MemoryCanvas_GetHighScores (()V) ===
-// Instrucoes: 118
-// APIs usadas:
-//   3x javax/microedition/rms/RecordStore.closeRecordStore -> ??? javax/microedition/rms/RecordStore.closeRecordStore
-//   1x javax/microedition/rms/RecordStore.openRecordStore -> ??? javax/microedition/rms/RecordStore.openRecordStore
-//   1x javax/microedition/rms/RecordStore.getNumRecords -> ??? javax/microedition/rms/RecordStore.getNumRecords
-//   1x javax/microedition/rms/RecordStore.getRecord -> ??? javax/microedition/rms/RecordStore.getRecord
-//   1x java/io/ByteArrayInputStream.<init> -> ??? java/io/ByteArrayInputStream.<init>
-//   1x java/io/DataInputStream.<init> -> ??? java/io/DataInputStream.<init>
-//   1x java/io/DataInputStream.readInt -> ??? java/io/DataInputStream.readInt
-//   1x java/io/DataInputStream.readUTF -> ??? java/io/DataInputStream.readUTF
-void MemoryCanvas_GetHighScores() {
-    // TODO: traduzir logica do bytecode
+int gamecanvas_getGFXHeight(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
 }
 
-// === MemoryCanvas.MemoryCanvas_addHighScore ((ILjava/lang/String;)V) ===
-// Instrucoes: 134
-// APIs usadas:
-//   3x javax/microedition/rms/RecordStore.closeRecordStore -> ??? javax/microedition/rms/RecordStore.closeRecordStore
-//   1x javax/microedition/rms/RecordStore.openRecordStore -> ??? javax/microedition/rms/RecordStore.openRecordStore
-//   1x java/io/ByteArrayOutputStream.<init> -> ??? java/io/ByteArrayOutputStream.<init>
-//   1x java/io/DataOutputStream.<init> -> ??? java/io/DataOutputStream.<init>
-//   1x java/io/DataOutputStream.writeInt -> ??? java/io/DataOutputStream.writeInt
-//   1x java/io/DataOutputStream.writeUTF -> ??? java/io/DataOutputStream.writeUTF
-//   1x java/io/DataOutputStream.flush -> ??? java/io/DataOutputStream.flush
-//   1x java/io/DataOutputStream.close -> ??? java/io/DataOutputStream.close
-void MemoryCanvas_addHighScore() {
-    // TODO: traduzir logica do bytecode
+int gamecanvas_getGFXWidth(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
 }
 
-// === MemoryMIDlet.MemoryMIDlet_constructor (()V) ===
-// Instrucoes: 3
-// APIs usadas:
-//   1x javax/microedition/midlet/MIDlet.<init> -> ??? javax/microedition/midlet/MIDlet.<init>
-void MemoryMIDlet_constructor() {
-    // TODO: traduzir logica do bytecode
+int gamecanvas_getHide(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
 }
 
-// === MemoryMIDlet.MemoryMIDlet_startApp (()V) ===
-// Instrucoes: 52
-// APIs usadas:
-//   2x javax/microedition/lcdui/Displayable.addCommand -> ??? javax/microedition/lcdui/Displayable.addCommand
-//   2x javax/microedition/lcdui/Displayable.setCommandListener -> ??? javax/microedition/lcdui/Displayable.setCommandListener
-//   1x javax/microedition/lcdui/Display.getDisplay -> j2me_display_get
-//   1x javax/microedition/lcdui/Display.setCurrent -> j2me_display_set
-//   1x javax/microedition/lcdui/Form.<init> -> ??? javax/microedition/lcdui/Form.<init>
-//   1x javax/microedition/lcdui/TextField.<init> -> ??? javax/microedition/lcdui/TextField.<init>
-//   1x javax/microedition/lcdui/Form.append -> ??? javax/microedition/lcdui/Form.append
-//   1x javax/microedition/lcdui/Command.<init> -> ??? javax/microedition/lcdui/Command.<init>
-void MemoryMIDlet_startApp() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_LoadIcons(void* self, void* arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryMIDlet.MemoryMIDlet_pauseApp (()V) ===
-// Instrucoes: 1
-void MemoryMIDlet_pauseApp() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_DrawText(void* self, void* arg0, void* arg1, int arg2, int arg3, int arg4) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryMIDlet.MemoryMIDlet_destroyApp ((Z)V) ===
-// Instrucoes: 3
-// APIs usadas:
-//   1x javax/microedition/midlet/MIDlet.notifyDestroyed -> ??? javax/microedition/midlet/MIDlet.notifyDestroyed
-void MemoryMIDlet_destroyApp() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_LoadFont(void* self, void* arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryMIDlet.MemoryMIDlet_commandAction ((Ljavax/microedition/lcdui/Command;Ljavax/microedition/lcdui/Displayable;)V) ===
-// Instrucoes: 20
-// APIs usadas:
-//   1x javax/microedition/midlet/MIDlet.notifyDestroyed -> ??? javax/microedition/midlet/MIDlet.notifyDestroyed
-void MemoryMIDlet_commandAction() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_LoadLevel(void* self, void* arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryMIDlet.MemoryMIDlet_enterHighScore (()V) ===
-// Instrucoes: 8
-// APIs usadas:
-//   1x javax/microedition/lcdui/TextField.setString -> ??? javax/microedition/lcdui/TextField.setString
-void MemoryMIDlet_enterHighScore() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_DrawIcons(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === MemoryMIDlet.MemoryMIDlet_setDisplayable ((Ljavax/microedition/lcdui/Displayable;)V) ===
-// Instrucoes: 6
-// APIs usadas:
-//   1x javax/microedition/lcdui/Display.setCurrent -> j2me_display_set
-void MemoryMIDlet_setDisplayable() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_MakeSprites(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// ============================================
-// GAME LOOP PRINCIPAL
-// ============================================
+void gamecanvas_DrawIt(void* self, int arg0, int arg1, int arg2, int arg3) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_Scroll(void* self, int arg0, int arg1) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+int gamecanvas_GetIcon(void* self, int arg0, int arg1) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
+}
+
+void gamecanvas_SetIcon(void* self, int arg0, int arg1, int arg2, int arg3, int arg4) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+int gamecanvas_checkkollision(void* self, int arg0, int arg1, int arg2, int arg3) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
+}
+
+void gamecanvas_GetLevelInfo(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_MovePlayer(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_checkHit(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_JumpPlayer(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_FallPlayer(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_ExtraJump(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_openGate(void* self, int arg0, int arg1) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_titelscroll(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_PlaySound(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_StopSound(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void* gamecanvas_convertHexToBinary(void* self, void* arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
+}
+
+void gamecanvas_ReborneEnemy(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_PlayerDead(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_resetdata(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_GetExtra(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void main_constructor(void* self) {
+    main* s = (main*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void main_startApp(void* self) {
+    main* s = (main*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void main_pauseApp(void* self) {
+    main* s = (main*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void main_destroyApp(void* self, int arg0) {
+    main* s = (main*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void main_hideNotify(void* self) {
+    main* s = (main*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void main_showNotify(void* self) {
+    main* s = (main*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void main_exitRequested(void* self) {
+    main* s = (main*)self;
+    if (!s) return;
+    (void)s;
+}
 
 int main(void) {
     j2me_gfx_init();
     j2me_input_init();
     j2me_random_init();
 
+    gamecanvas* mc = (gamecanvas*)calloc(1, sizeof(gamecanvas));
+    _self = mc;
+    msf_mc = mc;
+
     while (1) {
         j2me_input_update();
         if (j2me_input_should_quit()) break;
-
         j2me_gfx_begin_frame();
         j2me_gfx_clear(0x101020);
-
-        // TODO: chamar metodos do jogo aqui
-        // MemoryMIDlet_startApp();
-        // MemoryCanvas_paint();
-
         j2me_gfx_flip();
     }
-
     j2me_gfx_shutdown();
     sceKernelExitGame();
     return 0;
