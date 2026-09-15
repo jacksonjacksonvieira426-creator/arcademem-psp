@@ -1,4 +1,4 @@
-// arcademem - main.c gerado por V13
+// arcademem - main.c gerado por V14
 #include <pspkernel.h>
 #include <string.h>
 #include <stdlib.h>
@@ -16,52 +16,81 @@ PSP_MAIN_THREAD_ATTR(THREAD_ATTR_USER);
 #define SCR_W 480
 #define SCR_H 272
 
-// Tipos J2ME (auto-detectados)
+// Tipos J2ME (auto-detectados, dedup)
+typedef void* Alert;
+typedef void* AlertType;
 typedef void* Boolean;
 typedef void* Byte;
 typedef void* ByteArrayInputStream;
 typedef void* ByteArrayOutputStream;
+typedef void* Calendar;
 typedef void* Canvas;
 typedef void* Character;
+typedef void* ChoiceGroup;
 typedef void* Class_x;
 typedef void* Command;
 typedef void* CommandListener;
+typedef void* Control;
 typedef void* DataInputStream;
 typedef void* DataOutputStream;
+typedef void* Date;
+typedef void* DateField;
+typedef void* DeviceControl;
 typedef void* DirectGraphics;
 typedef void* Display;
 typedef void* Displayable;
 typedef void* Double_x;
+typedef void* Enumeration;
 typedef void* Exception;
 typedef void* Float_x;
 typedef void* Font;
 typedef void* Form;
 typedef void* FullCanvas;
 typedef void* GameCanvas;
+typedef void* Gauge;
 typedef void* Graphics;
+typedef void* Hashtable;
 typedef void* Image;
+typedef void* ImageItem;
 typedef void* InputStream;
 typedef void* Integer;
+typedef void* Item;
+typedef void* Iterator;
 typedef void* List;
+typedef void* ListItem;
+typedef void* Locale;
 typedef void* Long_x;
 typedef void* MIDlet;
 typedef void* MIDletStateChangeException;
+typedef void* Manager;
 typedef void* Math;
 typedef void* MemoryCanvas;
 typedef void* MemoryMIDlet;
 typedef void* Object;
 typedef void* OutputStream;
+typedef void* Player;
 typedef void* PrintStream;
+typedef void* Process;
+typedef void* Queue;
 typedef void* Random;
 typedef void* RecordStore;
 typedef void* Runnable;
+typedef void* Runtime;
+typedef void* Screen;
 typedef void* Short_x;
+typedef void* Sound;
+typedef void* Spacer;
+typedef void* Stack;
 typedef void* String;
 typedef void* StringBuffer;
+typedef void* StringTokenizer;
 typedef void* System;
+typedef void* TextBox;
 typedef void* TextField;
 typedef void* Thread;
 typedef void* Throwable;
+typedef void* Ticker;
+typedef void* TimeZone;
 typedef void* Timer;
 typedef void* TimerTask;
 typedef void* Vector;
@@ -94,11 +123,11 @@ int MapCanvas_lightflag = 0;
 
 // Structs
 struct MemoryCanvas_s {
-    Display*     display;
-    Display*     BackBuff;
+    void*        display;
+    void*        BackBuff;
     int          h;
     int          w;
-    Image**      Card;
+    void*        Card;
     int*         XPos;
     int*         YPos;
     int*         CardId;
@@ -125,10 +154,10 @@ struct MemoryCanvas_s {
     int          CanBreak;
     int          NoCheckTwice;
     int          score;
-    Font*        font;
-    Timer*       timer;
-    Thread*      thread;
-    String**     names;
+    void*        font;
+    void*        timer;
+    void*        thread;
+    void*        names;
     int*         values;
     int          TitX1;
     int          TitX2;
@@ -140,18 +169,18 @@ struct MemoryCanvas_s {
     int          TitY3;
     int          TitY4;
     int          TitY5;
-    Image*       buffer;
+    void*        buffer;
 };
 
 struct MemoryMIDlet_s {
-    Form*        scoreForm;
-    TextField*   scoreField;
-    Command*     doneCommand;
-    Displayable* currentDisplayable;
+    void*        scoreForm;
+    void*        scoreField;
+    void*        doneCommand;
+    void*        currentDisplayable;
     int          HiScoreOk;
-    MemoryCanvas* canvas;
-    Display*     display;
-    Command*     exitCommand;
+    void*        canvas;
+    void*        display;
+    void*        exitCommand;
 };
 
 // Prototipos
