@@ -1,4 +1,4 @@
-// arcademem - main.c gerado por V14
+// arcademem - main.c gerado por V15
 #include <pspkernel.h>
 #include <string.h>
 #include <stdlib.h>
@@ -16,7 +16,7 @@ PSP_MAIN_THREAD_ATTR(THREAD_ATTR_USER);
 #define SCR_W 480
 #define SCR_H 272
 
-// Tipos J2ME (auto-detectados, dedup)
+// Tipos J2ME (sem colidir com classes do projeto)
 typedef void* Alert;
 typedef void* AlertType;
 typedef void* Boolean;
@@ -64,8 +64,6 @@ typedef void* MIDlet;
 typedef void* MIDletStateChangeException;
 typedef void* Manager;
 typedef void* Math;
-typedef void* MemoryCanvas;
-typedef void* MemoryMIDlet;
 typedef void* Object;
 typedef void* OutputStream;
 typedef void* Player;
@@ -101,7 +99,7 @@ void j2me_canvas_serviceRepaints(void) { }
 void j2me_gc(void) { }
 void* j2me_image_get_graphics(void* img) { return img; }
 
-// Forward typedefs
+// Forward typedefs das classes do projeto
 typedef struct MemoryCanvas_s MemoryCanvas;
 typedef struct MemoryCanvas_s MemoryCanvas_s;
 typedef struct MemoryMIDlet_s MemoryMIDlet;
