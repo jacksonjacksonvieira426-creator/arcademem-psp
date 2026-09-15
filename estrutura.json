@@ -1,0 +1,3714 @@
+{
+  "jar": "ArcadeMem.jar",
+  "nome_projeto": "arcademem",
+  "midlet": "MemoryMIDlet",
+  "canvas": "MemoryCanvas",
+  "classes": [
+    {
+      "arquivo": "MemoryGame/MemoryCanvas.class",
+      "nome": "MemoryCanvas",
+      "super": "Canvas",
+      "campos": [
+        {
+          "nome": "display",
+          "desc": "Ljavax/microedition/lcdui/Display;",
+          "tipo_c": "Display*"
+        },
+        {
+          "nome": "BackBuff",
+          "desc": "Ljavax/microedition/lcdui/Display;",
+          "tipo_c": "Display*"
+        },
+        {
+          "nome": "h",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "w",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "Card",
+          "desc": "[Ljavax/microedition/lcdui/Image;",
+          "tipo_c": "Image**"
+        },
+        {
+          "nome": "XPos",
+          "desc": "[I",
+          "tipo_c": "int*"
+        },
+        {
+          "nome": "YPos",
+          "desc": "[I",
+          "tipo_c": "int*"
+        },
+        {
+          "nome": "CardId",
+          "desc": "[I",
+          "tipo_c": "int*"
+        },
+        {
+          "nome": "CardVis",
+          "desc": "[Z",
+          "tipo_c": "int*"
+        },
+        {
+          "nome": "CardCleard",
+          "desc": "[Z",
+          "tipo_c": "int*"
+        },
+        {
+          "nome": "time1",
+          "desc": "J",
+          "tipo_c": "int64_t"
+        },
+        {
+          "nome": "time2",
+          "desc": "J",
+          "tipo_c": "int64_t"
+        },
+        {
+          "nome": "wait1",
+          "desc": "J",
+          "tipo_c": "int64_t"
+        },
+        {
+          "nome": "wait2",
+          "desc": "J",
+          "tipo_c": "int64_t"
+        },
+        {
+          "nome": "Level",
+          "desc": "J",
+          "tipo_c": "int64_t"
+        },
+        {
+          "nome": "RestTime",
+          "desc": "J",
+          "tipo_c": "int64_t"
+        },
+        {
+          "nome": "ShowGetTimeBonus",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "ShowPerfect",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "ShowHighScore",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "StartGame",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "EndGame",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "Begin",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "ShowTitel",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "NoPaintBorad",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "RoundClear",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "Perfect",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "BreakWhile",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "GetTimeBonusActive",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "CanBreak",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "NoCheckTwice",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "score",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "font",
+          "desc": "Ljavax/microedition/lcdui/Font;",
+          "tipo_c": "Font*"
+        },
+        {
+          "nome": "timer",
+          "desc": "Ljava/util/Timer;",
+          "tipo_c": "Timer*"
+        },
+        {
+          "nome": "thread",
+          "desc": "Ljava/lang/Thread;",
+          "tipo_c": "Thread*"
+        },
+        {
+          "nome": "names",
+          "desc": "[Ljava/lang/String;",
+          "tipo_c": "String**"
+        },
+        {
+          "nome": "values",
+          "desc": "[I",
+          "tipo_c": "int*"
+        },
+        {
+          "nome": "TitX1",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "TitX2",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "TitX3",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "TitX4",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "TitX5",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "TitY1",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "TitY2",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "TitY3",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "TitY4",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "TitY5",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_buffer",
+          "desc": "Ljavax/microedition/lcdui/Image;",
+          "tipo_c": "Image*"
+        }
+      ],
+      "metodos": [
+        {
+          "nome": "<init>",
+          "desc": "(Ljavax/microedition/lcdui/Display;)V",
+          "tipo_ret": "void",
+          "n_instr": 72,
+          "apis": {
+            "javax/microedition/lcdui/Canvas.<init>": 1,
+            "java/util/Timer.<init>": 1,
+            "java/lang/Thread.<init>": 1,
+            "java/lang/Thread.start": 1
+          },
+          "constantes": [
+            [
+              3,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              14,
+              4
+            ],
+            [
+              17,
+              0
+            ],
+            [
+              21,
+              1
+            ],
+            [
+              25,
+              2
+            ],
+            [
+              29,
+              3
+            ],
+            [
+              34,
+              4
+            ],
+            [
+              37,
+              0
+            ],
+            [
+              38,
+              2000
+            ],
+            [
+              41,
+              1
+            ],
+            [
+              42,
+              1700
+            ],
+            [
+              45,
+              2
+            ],
+            [
+              46,
+              1500
+            ],
+            [
+              49,
+              3
+            ],
+            [
+              50,
+              100
+            ]
+          ],
+          "chamadas": [
+            [
+              1,
+              "javax/microedition/lcdui/Canvas.<init>"
+            ],
+            [
+              11,
+              "java/util/Timer.<init>"
+            ],
+            [
+              66,
+              "java/lang/Thread.<init>"
+            ],
+            [
+              70,
+              "java/lang/Thread.start"
+            ]
+          ],
+          "fields": [
+            [
+              4,
+              "putfield",
+              "MemoryCanvas.h"
+            ],
+            [
+              7,
+              "putfield",
+              "MemoryCanvas.w"
+            ],
+            [
+              12,
+              "putfield",
+              "MemoryCanvas.timer"
+            ],
+            [
+              32,
+              "putfield",
+              "MemoryCanvas.names"
+            ],
+            [
+              52,
+              "putfield",
+              "MemoryCanvas.values"
+            ],
+            [
+              61,
+              "putfield",
+              "MemoryCanvas.display"
+            ],
+            [
+              67,
+              "putfield",
+              "MemoryCanvas.thread"
+            ],
+            [
+              69,
+              "getfield",
+              "MemoryCanvas.thread"
+            ]
+          ]
+        },
+        {
+          "nome": "keyPressed",
+          "desc": "(I)V",
+          "tipo_ret": "void",
+          "n_instr": 427,
+          "apis": {
+            "javax/microedition/lcdui/Canvas.repaint": 2,
+            "java/lang/Thread.yield": 1
+          },
+          "constantes": [
+            [
+              2,
+              3
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              9,
+              1
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              19,
+              0
+            ],
+            [
+              23,
+              13
+            ],
+            [
+              31,
+              1
+            ],
+            [
+              35,
+              1
+            ],
+            [
+              38,
+              1
+            ],
+            [
+              42,
+              1
+            ],
+            [
+              46,
+              1
+            ],
+            [
+              48,
+              0
+            ],
+            [
+              52,
+              1
+            ],
+            [
+              55,
+              49
+            ],
+            [
+              57,
+              1
+            ],
+            [
+              59,
+              0
+            ],
+            [
+              62,
+              1
+            ],
+            [
+              65,
+              1
+            ],
+            [
+              67,
+              0
+            ],
+            [
+              71,
+              1
+            ]
+          ],
+          "chamadas": [
+            [
+              26,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ],
+            [
+              29,
+              "java/lang/Thread.yield"
+            ],
+            [
+              425,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ]
+          ],
+          "fields": [
+            [
+              10,
+              "putfield",
+              "MemoryCanvas.NoCheckTwice"
+            ],
+            [
+              17,
+              "getfield",
+              "MemoryCanvas.CardVis"
+            ],
+            [
+              32,
+              "putfield",
+              "MemoryCanvas.NoCheckTwice"
+            ],
+            [
+              34,
+              "getfield",
+              "MemoryCanvas.CanBreak"
+            ],
+            [
+              39,
+              "putfield",
+              "MemoryCanvas.BreakWhile"
+            ],
+            [
+              41,
+              "getfield",
+              "MemoryCanvas.ShowGetTimeBonus"
+            ],
+            [
+              45,
+              "getfield",
+              "MemoryCanvas.ShowPerfect"
+            ],
+            [
+              51,
+              "getfield",
+              "MemoryCanvas.StartGame"
+            ],
+            [
+              61,
+              "getfield",
+              "MemoryCanvas.CardVis"
+            ],
+            [
+              70,
+              "getfield",
+              "MemoryCanvas.CardCleard"
+            ],
+            [
+              80,
+              "getfield",
+              "MemoryCanvas.CardVis"
+            ],
+            [
+              91,
+              "getfield",
+              "MemoryCanvas.CardVis"
+            ],
+            [
+              100,
+              "getfield",
+              "MemoryCanvas.CardCleard"
+            ],
+            [
+              110,
+              "getfield",
+              "MemoryCanvas.CardVis"
+            ],
+            [
+              121,
+              "getfield",
+              "MemoryCanvas.CardVis"
+            ],
+            [
+              130,
+              "getfield",
+              "MemoryCanvas.CardCleard"
+            ],
+            [
+              140,
+              "getfield",
+              "MemoryCanvas.CardVis"
+            ],
+            [
+              151,
+              "getfield",
+              "MemoryCanvas.CardVis"
+            ],
+            [
+              160,
+              "getfield",
+              "MemoryCanvas.CardCleard"
+            ],
+            [
+              170,
+              "getfield",
+              "MemoryCanvas.CardVis"
+            ]
+          ]
+        },
+        {
+          "nome": "keyRepeated",
+          "desc": "(I)V",
+          "tipo_ret": "void",
+          "n_instr": 1,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": []
+        },
+        {
+          "nome": "keyReleased",
+          "desc": "(I)V",
+          "tipo_ret": "void",
+          "n_instr": 1,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": []
+        },
+        {
+          "nome": "pointerPressed",
+          "desc": "(II)V",
+          "tipo_ret": "void",
+          "n_instr": 1,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": []
+        },
+        {
+          "nome": "pointerReleased",
+          "desc": "(II)V",
+          "tipo_ret": "void",
+          "n_instr": 1,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": []
+        },
+        {
+          "nome": "pointerDragged",
+          "desc": "(II)V",
+          "tipo_ret": "void",
+          "n_instr": 1,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": []
+        },
+        {
+          "nome": "run",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 370,
+          "apis": {
+            "javax/microedition/lcdui/Canvas.repaint": 10,
+            "java/lang/Thread.yield": 10,
+            "java/lang/System.currentTimeMillis": 3,
+            "java/lang/Thread.sleep": 5,
+            "javax/microedition/lcdui/TextField.getString": 1
+          },
+          "constantes": [
+            [
+              1,
+              1
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              13,
+              100
+            ],
+            [
+              15,
+              80
+            ],
+            [
+              17,
+              -100
+            ],
+            [
+              19,
+              100
+            ],
+            [
+              21,
+              850
+            ],
+            [
+              29,
+              0
+            ],
+            [
+              32,
+              1
+            ],
+            [
+              35,
+              1
+            ],
+            [
+              38,
+              1
+            ],
+            [
+              46,
+              1
+            ],
+            [
+              49,
+              10000
+            ],
+            [
+              52,
+              0
+            ],
+            [
+              60,
+              1
+            ],
+            [
+              68,
+              1
+            ],
+            [
+              71,
+              7000
+            ],
+            [
+              74,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              41,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ],
+            [
+              44,
+              "java/lang/Thread.yield"
+            ],
+            [
+              55,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ],
+            [
+              58,
+              "java/lang/Thread.yield"
+            ],
+            [
+              63,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ],
+            [
+              66,
+              "java/lang/Thread.yield"
+            ],
+            [
+              77,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ],
+            [
+              80,
+              "java/lang/Thread.yield"
+            ],
+            [
+              111,
+              "java/lang/System.currentTimeMillis"
+            ],
+            [
+              114,
+              "java/lang/System.currentTimeMillis"
+            ],
+            [
+              127,
+              "java/lang/System.currentTimeMillis"
+            ],
+            [
+              170,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ],
+            [
+              173,
+              "java/lang/Thread.yield"
+            ],
+            [
+              224,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ],
+            [
+              227,
+              "java/lang/Thread.yield"
+            ],
+            [
+              231,
+              "java/lang/Thread.sleep"
+            ],
+            [
+              240,
+              "java/lang/Thread.sleep"
+            ],
+            [
+              249,
+              "java/lang/Thread.sleep"
+            ],
+            [
+              253,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ],
+            [
+              256,
+              "java/lang/Thread.yield"
+            ]
+          ],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "MemoryCanvas.Begin"
+            ],
+            [
+              5,
+              "putfield",
+              "MemoryCanvas.StartGame"
+            ],
+            [
+              8,
+              "putfield",
+              "MemoryCanvas.ShowTitel"
+            ],
+            [
+              11,
+              "putfield",
+              "MemoryCanvas.EndGame"
+            ],
+            [
+              14,
+              "putstatic",
+              "MemoryCanvas.TitX1"
+            ],
+            [
+              16,
+              "putstatic",
+              "MemoryCanvas.TitY2"
+            ],
+            [
+              18,
+              "putstatic",
+              "MemoryCanvas.TitX3"
+            ],
+            [
+              20,
+              "putstatic",
+              "MemoryCanvas.TitX4"
+            ],
+            [
+              27,
+              "putfield",
+              "MemoryCanvas.Level"
+            ],
+            [
+              30,
+              "putfield",
+              "MemoryCanvas.score"
+            ],
+            [
+              33,
+              "putfield",
+              "MemoryCanvas.EndGame"
+            ],
+            [
+              36,
+              "putfield",
+              "MemoryCanvas.NoPaintBorad"
+            ],
+            [
+              39,
+              "putfield",
+              "MemoryCanvas.ShowTitel"
+            ],
+            [
+              47,
+              "putfield",
+              "MemoryCanvas.CanBreak"
+            ],
+            [
+              53,
+              "putfield",
+              "MemoryCanvas.ShowTitel"
+            ],
+            [
+              61,
+              "putfield",
+              "MemoryCanvas.ShowHighScore"
+            ],
+            [
+              69,
+              "putfield",
+              "MemoryCanvas.CanBreak"
+            ],
+            [
+              75,
+              "putfield",
+              "MemoryCanvas.ShowHighScore"
+            ],
+            [
+              82,
+              "getfield",
+              "MemoryCanvas.StartGame"
+            ],
+            [
+              87,
+              "putfield",
+              "MemoryCanvas.EndGame"
+            ]
+          ]
+        },
+        {
+          "nome": "wait",
+          "desc": "(I)V",
+          "tipo_ret": "void",
+          "n_instr": 36,
+          "apis": {
+            "java/lang/System.currentTimeMillis": 3,
+            "javax/microedition/lcdui/Canvas.repaint": 1,
+            "java/lang/Thread.yield": 1
+          },
+          "constantes": [
+            [
+              1,
+              0
+            ],
+            [
+              15,
+              1
+            ],
+            [
+              33,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              4,
+              "java/lang/System.currentTimeMillis"
+            ],
+            [
+              7,
+              "java/lang/System.currentTimeMillis"
+            ],
+            [
+              19,
+              "java/lang/System.currentTimeMillis"
+            ],
+            [
+              22,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ],
+            [
+              25,
+              "java/lang/Thread.yield"
+            ]
+          ],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "MemoryCanvas.BreakWhile"
+            ],
+            [
+              5,
+              "putfield",
+              "MemoryCanvas.wait1"
+            ],
+            [
+              11,
+              "putfield",
+              "MemoryCanvas.wait2"
+            ],
+            [
+              14,
+              "getfield",
+              "MemoryCanvas.BreakWhile"
+            ],
+            [
+              20,
+              "putfield",
+              "MemoryCanvas.wait1"
+            ],
+            [
+              27,
+              "getfield",
+              "MemoryCanvas.wait1"
+            ],
+            [
+              29,
+              "getfield",
+              "MemoryCanvas.wait2"
+            ],
+            [
+              34,
+              "putfield",
+              "MemoryCanvas.CanBreak"
+            ]
+          ]
+        },
+        {
+          "nome": "ResetAllCards",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 18,
+          "apis": {},
+          "constantes": [
+            [
+              0,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              15,
+              13
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              4,
+              "getfield",
+              "MemoryCanvas.CardCleard"
+            ],
+            [
+              9,
+              "getfield",
+              "MemoryCanvas.CardVis"
+            ]
+          ]
+        },
+        {
+          "nome": "CheckEndRound",
+          "desc": "()Z",
+          "tipo_ret": "int",
+          "n_instr": 18,
+          "apis": {},
+          "constantes": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              14,
+              13
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              6,
+              "getfield",
+              "MemoryCanvas.CardCleard"
+            ]
+          ]
+        },
+        {
+          "nome": "CheckForGoed",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 66,
+          "apis": {},
+          "constantes": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              22,
+              13
+            ],
+            [
+              26,
+              1
+            ],
+            [
+              28,
+              0
+            ],
+            [
+              31,
+              1
+            ],
+            [
+              33,
+              0
+            ],
+            [
+              48,
+              1
+            ],
+            [
+              53,
+              1
+            ],
+            [
+              58,
+              10
+            ],
+            [
+              63,
+              0
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              8,
+              "getfield",
+              "MemoryCanvas.CardVis"
+            ],
+            [
+              37,
+              "getfield",
+              "MemoryCanvas.CardId"
+            ],
+            [
+              41,
+              "getfield",
+              "MemoryCanvas.CardId"
+            ],
+            [
+              46,
+              "getfield",
+              "MemoryCanvas.CardCleard"
+            ],
+            [
+              51,
+              "getfield",
+              "MemoryCanvas.CardCleard"
+            ],
+            [
+              57,
+              "getfield",
+              "MemoryCanvas.score"
+            ],
+            [
+              60,
+              "putfield",
+              "MemoryCanvas.score"
+            ],
+            [
+              64,
+              "putfield",
+              "MemoryCanvas.Perfect"
+            ]
+          ]
+        },
+        {
+          "nome": "CardsVisible",
+          "desc": "()I",
+          "tipo_ret": "int",
+          "n_instr": 18,
+          "apis": {},
+          "constantes": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              9,
+              1
+            ],
+            [
+              14,
+              13
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              6,
+              "getfield",
+              "MemoryCanvas.CardVis"
+            ]
+          ]
+        },
+        {
+          "nome": "paint",
+          "desc": "(Ljavax/microedition/lcdui/Graphics;)V",
+          "tipo_ret": "void",
+          "n_instr": 137,
+          "apis": {
+            "javax/microedition/lcdui/Image.getGraphics": 1,
+            "javax/microedition/lcdui/Graphics.setColor": 2,
+            "javax/microedition/lcdui/Graphics.fillRect": 1,
+            "javax/microedition/lcdui/Font.getFont": 1,
+            "javax/microedition/lcdui/Graphics.setFont": 1,
+            "java/lang/StringBuffer.<init>": 3,
+            "java/lang/StringBuffer.append": 6,
+            "java/lang/StringBuffer.toString": 3,
+            "javax/microedition/lcdui/Graphics.drawString": 3,
+            "javax/microedition/lcdui/Graphics.drawImage": 1
+          },
+          "constantes": [
+            [
+              8,
+              0
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              16,
+              0
+            ],
+            [
+              22,
+              0
+            ],
+            [
+              25,
+              1
+            ],
+            [
+              28,
+              8
+            ],
+            [
+              37,
+              1
+            ],
+            [
+              51,
+              1
+            ],
+            [
+              53,
+              0
+            ],
+            [
+              54,
+              1
+            ],
+            [
+              78,
+              62
+            ],
+            [
+              79,
+              10
+            ],
+            [
+              80,
+              20
+            ],
+            [
+              92,
+              62
+            ],
+            [
+              93,
+              20
+            ],
+            [
+              94,
+              20
+            ],
+            [
+              106,
+              62
+            ],
+            [
+              107,
+              40
+            ],
+            [
+              108,
+              20
+            ],
+            [
+              112,
+              1
+            ]
+          ],
+          "chamadas": [
+            [
+              2,
+              "javax/microedition/lcdui/Image.getGraphics"
+            ],
+            [
+              6,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              14,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              17,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              29,
+              "javax/microedition/lcdui/Font.getFont"
+            ],
+            [
+              34,
+              "javax/microedition/lcdui/Graphics.setFont"
+            ],
+            [
+              71,
+              "java/lang/StringBuffer.<init>"
+            ],
+            [
+              73,
+              "java/lang/StringBuffer.append"
+            ],
+            [
+              76,
+              "java/lang/StringBuffer.append"
+            ],
+            [
+              77,
+              "java/lang/StringBuffer.toString"
+            ],
+            [
+              81,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              85,
+              "java/lang/StringBuffer.<init>"
+            ],
+            [
+              87,
+              "java/lang/StringBuffer.append"
+            ],
+            [
+              90,
+              "java/lang/StringBuffer.append"
+            ],
+            [
+              91,
+              "java/lang/StringBuffer.toString"
+            ],
+            [
+              95,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              99,
+              "java/lang/StringBuffer.<init>"
+            ],
+            [
+              101,
+              "java/lang/StringBuffer.append"
+            ],
+            [
+              104,
+              "java/lang/StringBuffer.append"
+            ],
+            [
+              105,
+              "java/lang/StringBuffer.toString"
+            ]
+          ],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "MemoryCanvas._buffer"
+            ],
+            [
+              11,
+              "getfield",
+              "MemoryCanvas.w"
+            ],
+            [
+              13,
+              "getfield",
+              "MemoryCanvas.h"
+            ],
+            [
+              33,
+              "getfield",
+              "MemoryCanvas.font"
+            ],
+            [
+              36,
+              "getfield",
+              "MemoryCanvas.ShowHighScore"
+            ],
+            [
+              43,
+              "getfield",
+              "MemoryCanvas.ShowTitel"
+            ],
+            [
+              49,
+              "getfield",
+              "MemoryCanvas.ShowHighScore"
+            ],
+            [
+              57,
+              "getfield",
+              "MemoryCanvas.ShowTitel"
+            ],
+            [
+              60,
+              "getfield",
+              "MemoryCanvas.NoPaintBorad"
+            ],
+            [
+              75,
+              "getfield",
+              "MemoryCanvas.RestTime"
+            ],
+            [
+              89,
+              "getfield",
+              "MemoryCanvas.Level"
+            ],
+            [
+              103,
+              "getfield",
+              "MemoryCanvas.score"
+            ],
+            [
+              111,
+              "getfield",
+              "MemoryCanvas.ShowGetTimeBonus"
+            ],
+            [
+              117,
+              "getfield",
+              "MemoryCanvas.RestTime"
+            ],
+            [
+              120,
+              "getfield",
+              "MemoryCanvas.ShowPerfect"
+            ],
+            [
+              127,
+              "getfield",
+              "MemoryCanvas._buffer"
+            ],
+            [
+              131,
+              "getfield",
+              "MemoryCanvas._buffer"
+            ]
+          ]
+        },
+        {
+          "nome": "GetTimeBonus",
+          "desc": "(Ljavax/microedition/lcdui/Graphics;J)V",
+          "tipo_ret": "void",
+          "n_instr": 49,
+          "apis": {
+            "javax/microedition/lcdui/Graphics.setColor": 2,
+            "javax/microedition/lcdui/Graphics.fillRect": 1,
+            "javax/microedition/lcdui/Graphics.drawString": 3,
+            "java/lang/StringBuffer.<init>": 2,
+            "java/lang/StringBuffer.append": 5,
+            "java/lang/StringBuffer.toString": 2
+          },
+          "constantes": [
+            [
+              4,
+              0
+            ],
+            [
+              5,
+              15
+            ],
+            [
+              6,
+              100
+            ],
+            [
+              7,
+              40
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              14,
+              26
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              16,
+              20
+            ],
+            [
+              30,
+              6
+            ],
+            [
+              31,
+              36
+            ],
+            [
+              32,
+              20
+            ],
+            [
+              44,
+              76
+            ],
+            [
+              45,
+              36
+            ],
+            [
+              46,
+              20
+            ]
+          ],
+          "chamadas": [
+            [
+              2,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              8,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              11,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              17,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              21,
+              "java/lang/StringBuffer.<init>"
+            ],
+            [
+              23,
+              "java/lang/StringBuffer.append"
+            ],
+            [
+              26,
+              "java/lang/StringBuffer.append"
+            ],
+            [
+              28,
+              "java/lang/StringBuffer.append"
+            ],
+            [
+              29,
+              "java/lang/StringBuffer.toString"
+            ],
+            [
+              33,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              37,
+              "java/lang/StringBuffer.<init>"
+            ],
+            [
+              39,
+              "java/lang/StringBuffer.append"
+            ],
+            [
+              42,
+              "java/lang/StringBuffer.append"
+            ],
+            [
+              43,
+              "java/lang/StringBuffer.toString"
+            ],
+            [
+              47,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ]
+          ],
+          "fields": [
+            [
+              25,
+              "getfield",
+              "MemoryCanvas.RestTime"
+            ],
+            [
+              41,
+              "getfield",
+              "MemoryCanvas.score"
+            ]
+          ]
+        },
+        {
+          "nome": "GetPerfect",
+          "desc": "(Ljavax/microedition/lcdui/Graphics;)V",
+          "tipo_ret": "void",
+          "n_instr": 25,
+          "apis": {
+            "javax/microedition/lcdui/Graphics.setColor": 2,
+            "javax/microedition/lcdui/Graphics.fillRect": 1,
+            "javax/microedition/lcdui/Graphics.drawString": 2
+          },
+          "constantes": [
+            [
+              4,
+              0
+            ],
+            [
+              5,
+              15
+            ],
+            [
+              6,
+              100
+            ],
+            [
+              7,
+              40
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              14,
+              40
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              16,
+              20
+            ],
+            [
+              20,
+              40
+            ],
+            [
+              21,
+              36
+            ],
+            [
+              22,
+              20
+            ]
+          ],
+          "chamadas": [
+            [
+              2,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              8,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              11,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              17,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              23,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ]
+          ],
+          "fields": []
+        },
+        {
+          "nome": "ShowCards",
+          "desc": "(I)V",
+          "tipo_ret": "void",
+          "n_instr": 23,
+          "apis": {
+            "javax/microedition/lcdui/Canvas.repaint": 1
+          },
+          "constantes": [
+            [
+              0,
+              1
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              10,
+              13
+            ],
+            [
+              15,
+              1
+            ],
+            [
+              19,
+              10
+            ]
+          ],
+          "chamadas": [
+            [
+              13,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ]
+          ],
+          "fields": [
+            [
+              4,
+              "getfield",
+              "MemoryCanvas.CardVis"
+            ],
+            [
+              16,
+              "putfield",
+              "MemoryCanvas.CanBreak"
+            ]
+          ]
+        },
+        {
+          "nome": "ShowBackCards",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 21,
+          "apis": {
+            "javax/microedition/lcdui/Canvas.repaint": 1,
+            "java/lang/Thread.sleep": 1
+          },
+          "constantes": [
+            [
+              0,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              10,
+              13
+            ]
+          ],
+          "chamadas": [
+            [
+              13,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ],
+            [
+              17,
+              "java/lang/Thread.sleep"
+            ]
+          ],
+          "fields": [
+            [
+              4,
+              "getfield",
+              "MemoryCanvas.CardVis"
+            ]
+          ]
+        },
+        {
+          "nome": "ShowTimerLine",
+          "desc": "(Ljavax/microedition/lcdui/Graphics;)V",
+          "tipo_ret": "void",
+          "n_instr": 1,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": []
+        },
+        {
+          "nome": "SetCardPos",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 58,
+          "apis": {
+            "javax/microedition/lcdui/Image.getHeight": 1,
+            "javax/microedition/lcdui/Image.getWidth": 1
+          },
+          "constantes": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              17,
+              6
+            ],
+            [
+              21,
+              0
+            ],
+            [
+              27,
+              6
+            ],
+            [
+              31,
+              0
+            ],
+            [
+              34,
+              2
+            ],
+            [
+              51,
+              3
+            ],
+            [
+              55,
+              4
+            ]
+          ],
+          "chamadas": [
+            [
+              23,
+              "javax/microedition/lcdui/Image.getHeight"
+            ],
+            [
+              33,
+              "javax/microedition/lcdui/Image.getWidth"
+            ]
+          ],
+          "fields": [
+            [
+              20,
+              "getfield",
+              "MemoryCanvas.Card"
+            ],
+            [
+              30,
+              "getfield",
+              "MemoryCanvas.Card"
+            ],
+            [
+              40,
+              "getfield",
+              "MemoryCanvas.XPos"
+            ],
+            [
+              45,
+              "getfield",
+              "MemoryCanvas.YPos"
+            ]
+          ]
+        },
+        {
+          "nome": "PaintCards",
+          "desc": "(Ljavax/microedition/lcdui/Graphics;)V",
+          "tipo_ret": "void",
+          "n_instr": 53,
+          "apis": {},
+          "constantes": [
+            [
+              0,
+              1
+            ],
+            [
+              12,
+              1
+            ],
+            [
+              37,
+              0
+            ],
+            [
+              50,
+              13
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              4,
+              "getfield",
+              "MemoryCanvas.CardCleard"
+            ],
+            [
+              9,
+              "getfield",
+              "MemoryCanvas.CardVis"
+            ],
+            [
+              17,
+              "getfield",
+              "MemoryCanvas.Card"
+            ],
+            [
+              19,
+              "getfield",
+              "MemoryCanvas.CardId"
+            ],
+            [
+              24,
+              "getfield",
+              "MemoryCanvas.XPos"
+            ],
+            [
+              28,
+              "getfield",
+              "MemoryCanvas.YPos"
+            ],
+            [
+              36,
+              "getfield",
+              "MemoryCanvas.Card"
+            ],
+            [
+              40,
+              "getfield",
+              "MemoryCanvas.XPos"
+            ],
+            [
+              44,
+              "getfield",
+              "MemoryCanvas.YPos"
+            ]
+          ]
+        },
+        {
+          "nome": "DrawCard",
+          "desc": "(Ljavax/microedition/lcdui/Graphics;Ljavax/microedition/lcdui/Image;II)V",
+          "tipo_ret": "void",
+          "n_instr": 9,
+          "apis": {
+            "javax/microedition/lcdui/Graphics.drawImage": 1
+          },
+          "constantes": [
+            [
+              4,
+              16
+            ],
+            [
+              5,
+              4
+            ]
+          ],
+          "chamadas": [
+            [
+              7,
+              "javax/microedition/lcdui/Graphics.drawImage"
+            ]
+          ],
+          "fields": []
+        },
+        {
+          "nome": "DrawLevelBackGround",
+          "desc": "(Ljavax/microedition/lcdui/Graphics;)V",
+          "tipo_ret": "void",
+          "n_instr": 68,
+          "apis": {
+            "javax/microedition/lcdui/Graphics.drawLine": 5
+          },
+          "constantes": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              13,
+              1
+            ],
+            [
+              17,
+              1
+            ],
+            [
+              21,
+              1
+            ],
+            [
+              25,
+              1
+            ],
+            [
+              26,
+              1
+            ],
+            [
+              27,
+              1
+            ],
+            [
+              30,
+              1
+            ],
+            [
+              36,
+              1
+            ],
+            [
+              38,
+              1
+            ],
+            [
+              41,
+              1
+            ],
+            [
+              45,
+              1
+            ],
+            [
+              51,
+              2
+            ],
+            [
+              53,
+              10
+            ],
+            [
+              55,
+              1
+            ],
+            [
+              58,
+              2
+            ]
+          ],
+          "chamadas": [
+            [
+              8,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ],
+            [
+              23,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ],
+            [
+              32,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ],
+            [
+              47,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ],
+            [
+              66,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ]
+          ],
+          "fields": [
+            [
+              4,
+              "getfield",
+              "MemoryCanvas.w"
+            ],
+            [
+              12,
+              "getfield",
+              "MemoryCanvas.h"
+            ],
+            [
+              16,
+              "getfield",
+              "MemoryCanvas.w"
+            ],
+            [
+              20,
+              "getfield",
+              "MemoryCanvas.h"
+            ],
+            [
+              29,
+              "getfield",
+              "MemoryCanvas.h"
+            ],
+            [
+              35,
+              "getfield",
+              "MemoryCanvas.w"
+            ],
+            [
+              40,
+              "getfield",
+              "MemoryCanvas.w"
+            ],
+            [
+              44,
+              "getfield",
+              "MemoryCanvas.h"
+            ],
+            [
+              50,
+              "getfield",
+              "MemoryCanvas.w"
+            ],
+            [
+              57,
+              "getfield",
+              "MemoryCanvas.w"
+            ],
+            [
+              63,
+              "getfield",
+              "MemoryCanvas.h"
+            ]
+          ]
+        },
+        {
+          "nome": "InitGraphics",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 102,
+          "apis": {
+            "javax/microedition/lcdui/Image.createImage": 8,
+            "java/io/PrintStream.print": 1
+          },
+          "constantes": [
+            [
+              1,
+              100
+            ],
+            [
+              4,
+              74
+            ],
+            [
+              7,
+              13
+            ],
+            [
+              11,
+              13
+            ],
+            [
+              15,
+              13
+            ],
+            [
+              19,
+              13
+            ],
+            [
+              23,
+              13
+            ],
+            [
+              27,
+              13
+            ],
+            [
+              30,
+              0
+            ],
+            [
+              36,
+              0
+            ],
+            [
+              41,
+              0
+            ],
+            [
+              45,
+              13
+            ],
+            [
+              56,
+              0
+            ],
+            [
+              62,
+              1
+            ],
+            [
+              68,
+              2
+            ],
+            [
+              74,
+              3
+            ],
+            [
+              80,
+              4
+            ],
+            [
+              86,
+              5
+            ],
+            [
+              92,
+              6
+            ]
+          ],
+          "chamadas": [
+            [
+              52,
+              "javax/microedition/lcdui/Image.createImage"
+            ],
+            [
+              58,
+              "javax/microedition/lcdui/Image.createImage"
+            ],
+            [
+              64,
+              "javax/microedition/lcdui/Image.createImage"
+            ],
+            [
+              70,
+              "javax/microedition/lcdui/Image.createImage"
+            ],
+            [
+              76,
+              "javax/microedition/lcdui/Image.createImage"
+            ],
+            [
+              82,
+              "javax/microedition/lcdui/Image.createImage"
+            ],
+            [
+              88,
+              "javax/microedition/lcdui/Image.createImage"
+            ],
+            [
+              94,
+              "javax/microedition/lcdui/Image.createImage"
+            ],
+            [
+              100,
+              "java/io/PrintStream.print"
+            ]
+          ],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "MemoryCanvas.w"
+            ],
+            [
+              5,
+              "putfield",
+              "MemoryCanvas.h"
+            ],
+            [
+              9,
+              "putfield",
+              "MemoryCanvas.XPos"
+            ],
+            [
+              13,
+              "putfield",
+              "MemoryCanvas.YPos"
+            ],
+            [
+              17,
+              "putfield",
+              "MemoryCanvas.Card"
+            ],
+            [
+              21,
+              "putfield",
+              "MemoryCanvas.CardId"
+            ],
+            [
+              25,
+              "putfield",
+              "MemoryCanvas.CardVis"
+            ],
+            [
+              29,
+              "putfield",
+              "MemoryCanvas.CardCleard"
+            ],
+            [
+              34,
+              "getfield",
+              "MemoryCanvas.CardVis"
+            ],
+            [
+              39,
+              "getfield",
+              "MemoryCanvas.CardCleard"
+            ],
+            [
+              49,
+              "getfield",
+              "MemoryCanvas.w"
+            ],
+            [
+              51,
+              "getfield",
+              "MemoryCanvas.h"
+            ],
+            [
+              53,
+              "putfield",
+              "MemoryCanvas._buffer"
+            ],
+            [
+              55,
+              "getfield",
+              "MemoryCanvas.Card"
+            ],
+            [
+              61,
+              "getfield",
+              "MemoryCanvas.Card"
+            ],
+            [
+              67,
+              "getfield",
+              "MemoryCanvas.Card"
+            ],
+            [
+              73,
+              "getfield",
+              "MemoryCanvas.Card"
+            ],
+            [
+              79,
+              "getfield",
+              "MemoryCanvas.Card"
+            ],
+            [
+              85,
+              "getfield",
+              "MemoryCanvas.Card"
+            ],
+            [
+              91,
+              "getfield",
+              "MemoryCanvas.Card"
+            ]
+          ]
+        },
+        {
+          "nome": "GetRandom",
+          "desc": "(I)I",
+          "tipo_ret": "int",
+          "n_instr": 19,
+          "apis": {
+            "java/util/Random.<init>": 1,
+            "java/util/Random.nextInt": 1
+          },
+          "constantes": [
+            [
+              0,
+              0
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              15,
+              1
+            ]
+          ],
+          "chamadas": [
+            [
+              4,
+              "java/util/Random.<init>"
+            ],
+            [
+              8,
+              "java/util/Random.nextInt"
+            ]
+          ],
+          "fields": []
+        },
+        {
+          "nome": "MixCards",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 77,
+          "apis": {},
+          "constantes": [
+            [
+              0,
+              13
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              17,
+              13
+            ],
+            [
+              19,
+              1
+            ],
+            [
+              22,
+              1
+            ],
+            [
+              26,
+              12
+            ],
+            [
+              31,
+              12
+            ],
+            [
+              34,
+              0
+            ],
+            [
+              36,
+              1
+            ],
+            [
+              44,
+              1
+            ],
+            [
+              48,
+              13
+            ],
+            [
+              70,
+              3
+            ],
+            [
+              74,
+              7
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              11,
+              "getfield",
+              "MemoryCanvas.CardId"
+            ],
+            [
+              40,
+              "getfield",
+              "MemoryCanvas.CardId"
+            ],
+            [
+              54,
+              "getfield",
+              "MemoryCanvas.CardId"
+            ],
+            [
+              59,
+              "getfield",
+              "MemoryCanvas.CardId"
+            ],
+            [
+              64,
+              "getfield",
+              "MemoryCanvas.CardId"
+            ]
+          ]
+        },
+        {
+          "nome": "isHighScore",
+          "desc": "(I)Z",
+          "tipo_ret": "int",
+          "n_instr": 19,
+          "apis": {},
+          "constantes": [
+            [
+              0,
+              0
+            ],
+            [
+              9,
+              1
+            ],
+            [
+              17,
+              0
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              5,
+              "getfield",
+              "MemoryCanvas.values"
+            ],
+            [
+              14,
+              "getfield",
+              "MemoryCanvas.names"
+            ]
+          ]
+        },
+        {
+          "nome": "DisplayHighScore",
+          "desc": "(Ljavax/microedition/lcdui/Graphics;)V",
+          "tipo_ret": "void",
+          "n_instr": 50,
+          "apis": {
+            "javax/microedition/lcdui/Graphics.drawString": 3,
+            "java/lang/StringBuffer.<init>": 1,
+            "java/lang/StringBuffer.append": 2,
+            "java/lang/StringBuffer.toString": 1
+          },
+          "constantes": [
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              5
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              17,
+              3
+            ],
+            [
+              18,
+              20
+            ],
+            [
+              19,
+              12
+            ],
+            [
+              23,
+              20
+            ],
+            [
+              37,
+              35
+            ],
+            [
+              38,
+              20
+            ],
+            [
+              39,
+              12
+            ],
+            [
+              43,
+              20
+            ],
+            [
+              47,
+              4
+            ]
+          ],
+          "chamadas": [
+            [
+              8,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              24,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              28,
+              "java/lang/StringBuffer.<init>"
+            ],
+            [
+              30,
+              "java/lang/StringBuffer.append"
+            ],
+            [
+              35,
+              "java/lang/StringBuffer.append"
+            ],
+            [
+              36,
+              "java/lang/StringBuffer.toString"
+            ],
+            [
+              44,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ]
+          ],
+          "fields": [
+            [
+              14,
+              "getfield",
+              "MemoryCanvas.names"
+            ],
+            [
+              32,
+              "getfield",
+              "MemoryCanvas.values"
+            ]
+          ]
+        },
+        {
+          "nome": "DisplayTitle",
+          "desc": "(Ljavax/microedition/lcdui/Graphics;)V",
+          "tipo_ret": "void",
+          "n_instr": 113,
+          "apis": {
+            "javax/microedition/lcdui/Font.getFont": 2,
+            "javax/microedition/lcdui/Graphics.setFont": 2,
+            "javax/microedition/lcdui/Graphics.drawString": 4
+          },
+          "constantes": [
+            [
+              4,
+              0
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              10,
+              16
+            ],
+            [
+              20,
+              5
+            ],
+            [
+              21,
+              20
+            ],
+            [
+              27,
+              0
+            ],
+            [
+              30,
+              0
+            ],
+            [
+              33,
+              8
+            ],
+            [
+              42,
+              8
+            ],
+            [
+              44,
+              20
+            ],
+            [
+              49,
+              45
+            ],
+            [
+              50,
+              20
+            ],
+            [
+              55,
+              60
+            ],
+            [
+              56,
+              20
+            ],
+            [
+              59,
+              10
+            ],
+            [
+              62,
+              12
+            ],
+            [
+              66,
+              10
+            ],
+            [
+              69,
+              25
+            ],
+            [
+              72,
+              10
+            ],
+            [
+              76,
+              25
+            ]
+          ],
+          "chamadas": [
+            [
+              11,
+              "javax/microedition/lcdui/Font.getFont"
+            ],
+            [
+              16,
+              "javax/microedition/lcdui/Graphics.setFont"
+            ],
+            [
+              22,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              34,
+              "javax/microedition/lcdui/Font.getFont"
+            ],
+            [
+              39,
+              "javax/microedition/lcdui/Graphics.setFont"
+            ],
+            [
+              45,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              51,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              57,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ]
+          ],
+          "fields": [
+            [
+              15,
+              "getfield",
+              "MemoryCanvas.font"
+            ],
+            [
+              19,
+              "getstatic",
+              "MemoryCanvas.TitX1"
+            ],
+            [
+              38,
+              "getfield",
+              "MemoryCanvas.font"
+            ],
+            [
+              43,
+              "getstatic",
+              "MemoryCanvas.TitY2"
+            ],
+            [
+              48,
+              "getstatic",
+              "MemoryCanvas.TitX3"
+            ],
+            [
+              54,
+              "getstatic",
+              "MemoryCanvas.TitX4"
+            ],
+            [
+              58,
+              "getstatic",
+              "MemoryCanvas.TitX1"
+            ],
+            [
+              61,
+              "getstatic",
+              "MemoryCanvas.TitX1"
+            ],
+            [
+              64,
+              "putstatic",
+              "MemoryCanvas.TitX1"
+            ],
+            [
+              67,
+              "putstatic",
+              "MemoryCanvas.TitX1"
+            ],
+            [
+              68,
+              "getstatic",
+              "MemoryCanvas.TitY2"
+            ],
+            [
+              71,
+              "getstatic",
+              "MemoryCanvas.TitY2"
+            ],
+            [
+              74,
+              "putstatic",
+              "MemoryCanvas.TitY2"
+            ],
+            [
+              77,
+              "putstatic",
+              "MemoryCanvas.TitY2"
+            ],
+            [
+              78,
+              "getstatic",
+              "MemoryCanvas.TitX1"
+            ],
+            [
+              84,
+              "getstatic",
+              "MemoryCanvas.TitY2"
+            ],
+            [
+              92,
+              "getstatic",
+              "MemoryCanvas.TitX3"
+            ],
+            [
+              95,
+              "getstatic",
+              "MemoryCanvas.TitX3"
+            ],
+            [
+              98,
+              "putstatic",
+              "MemoryCanvas.TitX3"
+            ],
+            [
+              101,
+              "putstatic",
+              "MemoryCanvas.TitX3"
+            ]
+          ]
+        },
+        {
+          "nome": "GetHighScores",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 118,
+          "apis": {
+            "javax/microedition/rms/RecordStore.openRecordStore": 1,
+            "javax/microedition/rms/RecordStore.getNumRecords": 1,
+            "javax/microedition/rms/RecordStore.getRecord": 1,
+            "java/io/ByteArrayInputStream.<init>": 1,
+            "java/io/DataInputStream.<init>": 1,
+            "java/io/DataInputStream.readInt": 1,
+            "java/io/DataInputStream.readUTF": 1,
+            "java/io/ByteArrayOutputStream.<init>": 1,
+            "java/io/DataOutputStream.<init>": 1,
+            "java/io/DataOutputStream.writeInt": 1,
+            "java/io/DataOutputStream.writeUTF": 1,
+            "java/io/DataOutputStream.flush": 1,
+            "java/io/DataOutputStream.close": 1,
+            "java/io/ByteArrayOutputStream.toByteArray": 1,
+            "javax/microedition/rms/RecordStore.addRecord": 1,
+            "javax/microedition/rms/RecordStore.closeRecordStore": 3
+          },
+          "constantes": [
+            [
+              3,
+              1
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              14,
+              1
+            ],
+            [
+              23,
+              0
+            ],
+            [
+              48,
+              0
+            ],
+            [
+              53,
+              12
+            ],
+            [
+              82,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              4,
+              "javax/microedition/rms/RecordStore.openRecordStore"
+            ],
+            [
+              7,
+              "javax/microedition/rms/RecordStore.getNumRecords"
+            ],
+            [
+              16,
+              "javax/microedition/rms/RecordStore.getRecord"
+            ],
+            [
+              26,
+              "java/io/ByteArrayInputStream.<init>"
+            ],
+            [
+              27,
+              "java/io/DataInputStream.<init>"
+            ],
+            [
+              33,
+              "java/io/DataInputStream.readInt"
+            ],
+            [
+              39,
+              "java/io/DataInputStream.readUTF"
+            ],
+            [
+              54,
+              "java/io/ByteArrayOutputStream.<init>"
+            ],
+            [
+              59,
+              "java/io/DataOutputStream.<init>"
+            ],
+            [
+              66,
+              "java/io/DataOutputStream.writeInt"
+            ],
+            [
+              72,
+              "java/io/DataOutputStream.writeUTF"
+            ],
+            [
+              74,
+              "java/io/DataOutputStream.flush"
+            ],
+            [
+              76,
+              "java/io/DataOutputStream.close"
+            ],
+            [
+              78,
+              "java/io/ByteArrayOutputStream.toByteArray"
+            ],
+            [
+              85,
+              "javax/microedition/rms/RecordStore.addRecord"
+            ],
+            [
+              96,
+              "javax/microedition/rms/RecordStore.closeRecordStore"
+            ],
+            [
+              104,
+              "javax/microedition/rms/RecordStore.closeRecordStore"
+            ],
+            [
+              112,
+              "javax/microedition/rms/RecordStore.closeRecordStore"
+            ]
+          ],
+          "fields": [
+            [
+              30,
+              "getfield",
+              "MemoryCanvas.values"
+            ],
+            [
+              36,
+              "getfield",
+              "MemoryCanvas.names"
+            ],
+            [
+              44,
+              "getfield",
+              "MemoryCanvas.names"
+            ],
+            [
+              63,
+              "getfield",
+              "MemoryCanvas.values"
+            ],
+            [
+              69,
+              "getfield",
+              "MemoryCanvas.names"
+            ],
+            [
+              90,
+              "getfield",
+              "MemoryCanvas.names"
+            ]
+          ]
+        },
+        {
+          "nome": "addHighScore",
+          "desc": "(ILjava/lang/String;)V",
+          "tipo_ret": "void",
+          "n_instr": 134,
+          "apis": {
+            "javax/microedition/rms/RecordStore.openRecordStore": 1,
+            "java/io/ByteArrayOutputStream.<init>": 1,
+            "java/io/DataOutputStream.<init>": 1,
+            "java/io/DataOutputStream.writeInt": 1,
+            "java/io/DataOutputStream.writeUTF": 1,
+            "java/io/DataOutputStream.flush": 1,
+            "java/io/DataOutputStream.close": 1,
+            "java/io/ByteArrayOutputStream.toByteArray": 1,
+            "javax/microedition/rms/RecordStore.setRecord": 1,
+            "javax/microedition/rms/RecordStore.closeRecordStore": 3
+          },
+          "constantes": [
+            [
+              0,
+              0
+            ],
+            [
+              12,
+              1
+            ],
+            [
+              22,
+              1
+            ],
+            [
+              32,
+              1
+            ],
+            [
+              53,
+              1
+            ],
+            [
+              56,
+              0
+            ],
+            [
+              61,
+              12
+            ],
+            [
+              90,
+              1
+            ],
+            [
+              93,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              54,
+              "javax/microedition/rms/RecordStore.openRecordStore"
+            ],
+            [
+              62,
+              "java/io/ByteArrayOutputStream.<init>"
+            ],
+            [
+              67,
+              "java/io/DataOutputStream.<init>"
+            ],
+            [
+              74,
+              "java/io/DataOutputStream.writeInt"
+            ],
+            [
+              80,
+              "java/io/DataOutputStream.writeUTF"
+            ],
+            [
+              82,
+              "java/io/DataOutputStream.flush"
+            ],
+            [
+              84,
+              "java/io/DataOutputStream.close"
+            ],
+            [
+              86,
+              "java/io/ByteArrayOutputStream.toByteArray"
+            ],
+            [
+              96,
+              "javax/microedition/rms/RecordStore.setRecord"
+            ],
+            [
+              106,
+              "javax/microedition/rms/RecordStore.closeRecordStore"
+            ],
+            [
+              114,
+              "javax/microedition/rms/RecordStore.closeRecordStore"
+            ],
+            [
+              122,
+              "javax/microedition/rms/RecordStore.closeRecordStore"
+            ]
+          ],
+          "fields": [
+            [
+              5,
+              "getfield",
+              "MemoryCanvas.values"
+            ],
+            [
+              10,
+              "getfield",
+              "MemoryCanvas.names"
+            ],
+            [
+              17,
+              "getfield",
+              "MemoryCanvas.values"
+            ],
+            [
+              20,
+              "getfield",
+              "MemoryCanvas.values"
+            ],
+            [
+              27,
+              "getfield",
+              "MemoryCanvas.names"
+            ],
+            [
+              30,
+              "getfield",
+              "MemoryCanvas.names"
+            ],
+            [
+              41,
+              "getfield",
+              "MemoryCanvas.values"
+            ],
+            [
+              46,
+              "getfield",
+              "MemoryCanvas.names"
+            ],
+            [
+              71,
+              "getfield",
+              "MemoryCanvas.values"
+            ],
+            [
+              77,
+              "getfield",
+              "MemoryCanvas.names"
+            ],
+            [
+              100,
+              "getfield",
+              "MemoryCanvas.names"
+            ],
+            [
+              130,
+              "getfield",
+              "MemoryCanvas.names"
+            ]
+          ]
+        }
+      ],
+      "apis": {
+        "javax/microedition/lcdui/Canvas.<init>": 1,
+        "java/util/Timer.<init>": 1,
+        "java/lang/Thread.<init>": 1,
+        "java/lang/Thread.start": 1,
+        "javax/microedition/lcdui/Canvas.repaint": 15,
+        "java/lang/Thread.yield": 12,
+        "java/lang/System.currentTimeMillis": 6,
+        "java/lang/Thread.sleep": 6,
+        "javax/microedition/lcdui/TextField.getString": 1,
+        "javax/microedition/lcdui/Image.getGraphics": 1,
+        "javax/microedition/lcdui/Graphics.setColor": 6,
+        "javax/microedition/lcdui/Graphics.fillRect": 3,
+        "javax/microedition/lcdui/Font.getFont": 3,
+        "javax/microedition/lcdui/Graphics.setFont": 3,
+        "java/lang/StringBuffer.<init>": 6,
+        "java/lang/StringBuffer.append": 13,
+        "java/lang/StringBuffer.toString": 6,
+        "javax/microedition/lcdui/Graphics.drawString": 15,
+        "javax/microedition/lcdui/Graphics.drawImage": 2,
+        "javax/microedition/lcdui/Image.getHeight": 1,
+        "javax/microedition/lcdui/Image.getWidth": 1,
+        "javax/microedition/lcdui/Graphics.drawLine": 5,
+        "javax/microedition/lcdui/Image.createImage": 8,
+        "java/io/PrintStream.print": 1,
+        "java/util/Random.<init>": 1,
+        "java/util/Random.nextInt": 1,
+        "javax/microedition/rms/RecordStore.openRecordStore": 2,
+        "javax/microedition/rms/RecordStore.getNumRecords": 1,
+        "javax/microedition/rms/RecordStore.getRecord": 1,
+        "java/io/ByteArrayInputStream.<init>": 1,
+        "java/io/DataInputStream.<init>": 1,
+        "java/io/DataInputStream.readInt": 1,
+        "java/io/DataInputStream.readUTF": 1,
+        "java/io/ByteArrayOutputStream.<init>": 2,
+        "java/io/DataOutputStream.<init>": 2,
+        "java/io/DataOutputStream.writeInt": 2,
+        "java/io/DataOutputStream.writeUTF": 2,
+        "java/io/DataOutputStream.flush": 2,
+        "java/io/DataOutputStream.close": 2,
+        "java/io/ByteArrayOutputStream.toByteArray": 2,
+        "javax/microedition/rms/RecordStore.addRecord": 1,
+        "javax/microedition/rms/RecordStore.closeRecordStore": 6,
+        "javax/microedition/rms/RecordStore.setRecord": 1
+      },
+      "padroes": [
+        "CANVAS",
+        "TEM_PAINT",
+        "TEM_INPUT",
+        "TEM_RUN",
+        "USA_TIMER",
+        "USA_IMAGE"
+      ]
+    },
+    {
+      "arquivo": "MemoryGame/MemoryMIDlet.class",
+      "nome": "MemoryMIDlet",
+      "super": "MIDlet",
+      "campos": [
+        {
+          "nome": "scoreForm",
+          "desc": "Ljavax/microedition/lcdui/Form;",
+          "tipo_c": "Form*"
+        },
+        {
+          "nome": "_scoreField",
+          "desc": "Ljavax/microedition/lcdui/TextField;",
+          "tipo_c": "TextField*"
+        },
+        {
+          "nome": "_doneCommand",
+          "desc": "Ljavax/microedition/lcdui/Command;",
+          "tipo_c": "Command*"
+        },
+        {
+          "nome": "_currentDisplayable",
+          "desc": "Ljavax/microedition/lcdui/Displayable;",
+          "tipo_c": "Displayable*"
+        },
+        {
+          "nome": "HiScoreOk",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "canvas",
+          "desc": "LMemoryGame/MemoryCanvas;",
+          "tipo_c": "MemoryCanvas*"
+        },
+        {
+          "nome": "display",
+          "desc": "Ljavax/microedition/lcdui/Display;",
+          "tipo_c": "Display*"
+        },
+        {
+          "nome": "_exitCommand",
+          "desc": "Ljavax/microedition/lcdui/Command;",
+          "tipo_c": "Command*"
+        }
+      ],
+      "metodos": [
+        {
+          "nome": "<init>",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 3,
+          "apis": {
+            "javax/microedition/midlet/MIDlet.<init>": 1
+          },
+          "constantes": [],
+          "chamadas": [
+            [
+              1,
+              "javax/microedition/midlet/MIDlet.<init>"
+            ]
+          ],
+          "fields": []
+        },
+        {
+          "nome": "startApp",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 52,
+          "apis": {
+            "javax/microedition/lcdui/Display.getDisplay": 1,
+            "javax/microedition/lcdui/Displayable.addCommand": 2,
+            "javax/microedition/lcdui/Displayable.setCommandListener": 2,
+            "javax/microedition/lcdui/Display.setCurrent": 1,
+            "javax/microedition/lcdui/Form.<init>": 1,
+            "javax/microedition/lcdui/TextField.<init>": 1,
+            "javax/microedition/lcdui/Form.append": 1,
+            "javax/microedition/lcdui/Command.<init>": 1
+          },
+          "constantes": [
+            [
+              30,
+              3
+            ],
+            [
+              31,
+              0
+            ],
+            [
+              41,
+              1
+            ],
+            [
+              42,
+              1
+            ]
+          ],
+          "chamadas": [
+            [
+              1,
+              "javax/microedition/lcdui/Display.getDisplay"
+            ],
+            [
+              12,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              16,
+              "javax/microedition/lcdui/Displayable.setCommandListener"
+            ],
+            [
+              20,
+              "javax/microedition/lcdui/Display.setCurrent"
+            ],
+            [
+              24,
+              "javax/microedition/lcdui/Form.<init>"
+            ],
+            [
+              32,
+              "javax/microedition/lcdui/TextField.<init>"
+            ],
+            [
+              36,
+              "javax/microedition/lcdui/Form.append"
+            ],
+            [
+              43,
+              "javax/microedition/lcdui/Command.<init>"
+            ],
+            [
+              47,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              50,
+              "javax/microedition/lcdui/Displayable.setCommandListener"
+            ]
+          ],
+          "fields": [
+            [
+              2,
+              "putstatic",
+              "MemoryMIDlet.display"
+            ],
+            [
+              6,
+              "getstatic",
+              "MemoryMIDlet.display"
+            ],
+            [
+              8,
+              "putfield",
+              "MemoryMIDlet.canvas"
+            ],
+            [
+              10,
+              "getfield",
+              "MemoryMIDlet.canvas"
+            ],
+            [
+              11,
+              "getstatic",
+              "MemoryMIDlet._exitCommand"
+            ],
+            [
+              14,
+              "getfield",
+              "MemoryMIDlet.canvas"
+            ],
+            [
+              17,
+              "getstatic",
+              "MemoryMIDlet.display"
+            ],
+            [
+              19,
+              "getfield",
+              "MemoryMIDlet.canvas"
+            ],
+            [
+              25,
+              "putstatic",
+              "MemoryMIDlet.scoreForm"
+            ],
+            [
+              33,
+              "putstatic",
+              "MemoryMIDlet._scoreField"
+            ],
+            [
+              34,
+              "getstatic",
+              "MemoryMIDlet.scoreForm"
+            ],
+            [
+              35,
+              "getstatic",
+              "MemoryMIDlet._scoreField"
+            ],
+            [
+              44,
+              "putstatic",
+              "MemoryMIDlet._doneCommand"
+            ],
+            [
+              45,
+              "getstatic",
+              "MemoryMIDlet.scoreForm"
+            ],
+            [
+              46,
+              "getstatic",
+              "MemoryMIDlet._doneCommand"
+            ],
+            [
+              48,
+              "getstatic",
+              "MemoryMIDlet.scoreForm"
+            ]
+          ]
+        },
+        {
+          "nome": "pauseApp",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 1,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": []
+        },
+        {
+          "nome": "destroyApp",
+          "desc": "(Z)V",
+          "tipo_ret": "void",
+          "n_instr": 3,
+          "apis": {
+            "javax/microedition/midlet/MIDlet.notifyDestroyed": 1
+          },
+          "constantes": [],
+          "chamadas": [
+            [
+              1,
+              "javax/microedition/midlet/MIDlet.notifyDestroyed"
+            ]
+          ],
+          "fields": []
+        },
+        {
+          "nome": "commandAction",
+          "desc": "(Ljavax/microedition/lcdui/Command;Ljavax/microedition/lcdui/Displayable;)V",
+          "tipo_ret": "void",
+          "n_instr": 20,
+          "apis": {
+            "javax/microedition/midlet/MIDlet.notifyDestroyed": 1
+          },
+          "constantes": [
+            [
+              4,
+              0
+            ],
+            [
+              14,
+              1
+            ]
+          ],
+          "chamadas": [
+            [
+              9,
+              "javax/microedition/midlet/MIDlet.notifyDestroyed"
+            ]
+          ],
+          "fields": [
+            [
+              1,
+              "getstatic",
+              "MemoryMIDlet._exitCommand"
+            ],
+            [
+              12,
+              "getstatic",
+              "MemoryMIDlet._doneCommand"
+            ],
+            [
+              15,
+              "putstatic",
+              "MemoryMIDlet.HiScoreOk"
+            ],
+            [
+              17,
+              "getfield",
+              "MemoryMIDlet.canvas"
+            ]
+          ]
+        },
+        {
+          "nome": "enterHighScore",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 8,
+          "apis": {
+            "javax/microedition/lcdui/TextField.setString": 1
+          },
+          "constantes": [
+            [
+              0,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              4,
+              "javax/microedition/lcdui/TextField.setString"
+            ]
+          ],
+          "fields": [
+            [
+              1,
+              "putstatic",
+              "MemoryMIDlet.HiScoreOk"
+            ],
+            [
+              2,
+              "getstatic",
+              "MemoryMIDlet._scoreField"
+            ],
+            [
+              5,
+              "getstatic",
+              "MemoryMIDlet.scoreForm"
+            ]
+          ]
+        },
+        {
+          "nome": "setDisplayable",
+          "desc": "(Ljavax/microedition/lcdui/Displayable;)V",
+          "tipo_ret": "void",
+          "n_instr": 6,
+          "apis": {
+            "javax/microedition/lcdui/Display.setCurrent": 1
+          },
+          "constantes": [],
+          "chamadas": [
+            [
+              4,
+              "javax/microedition/lcdui/Display.setCurrent"
+            ]
+          ],
+          "fields": [
+            [
+              1,
+              "putstatic",
+              "MemoryMIDlet._currentDisplayable"
+            ],
+            [
+              2,
+              "getstatic",
+              "MemoryMIDlet.display"
+            ]
+          ]
+        },
+        {
+          "nome": "<clinit>",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 8,
+          "apis": {
+            "javax/microedition/lcdui/Command.<init>": 1
+          },
+          "constantes": [
+            [
+              3,
+              7
+            ],
+            [
+              4,
+              1
+            ]
+          ],
+          "chamadas": [
+            [
+              5,
+              "javax/microedition/lcdui/Command.<init>"
+            ]
+          ],
+          "fields": [
+            [
+              6,
+              "putstatic",
+              "MemoryMIDlet._exitCommand"
+            ]
+          ]
+        }
+      ],
+      "apis": {
+        "javax/microedition/midlet/MIDlet.<init>": 1,
+        "javax/microedition/lcdui/Display.getDisplay": 1,
+        "javax/microedition/lcdui/Displayable.addCommand": 2,
+        "javax/microedition/lcdui/Displayable.setCommandListener": 2,
+        "javax/microedition/lcdui/Display.setCurrent": 2,
+        "javax/microedition/lcdui/Form.<init>": 1,
+        "javax/microedition/lcdui/TextField.<init>": 1,
+        "javax/microedition/lcdui/Form.append": 1,
+        "javax/microedition/lcdui/Command.<init>": 2,
+        "javax/microedition/midlet/MIDlet.notifyDestroyed": 2,
+        "javax/microedition/lcdui/TextField.setString": 1
+      },
+      "padroes": [
+        "MIDLET",
+        "TEM_STARTAPP"
+      ]
+    }
+  ],
+  "n_classes": 2
+}
